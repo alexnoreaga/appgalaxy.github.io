@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>App Cicilan</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<header>
+      <a  href="#" ><img class="logo" height="45px;"src="images/logo.png"></a>
+    </header>
+
+<!--
+<div id="topBar"> <a href ="#" onclick="load_home()"> HOME </a> </div>
+-->
+
+<div class="box-1">
+<select class="select" id="seLect" onchange="load_home()">
+	  <option value="" selected disabled hidden>Choose here</option>
+	<option value="canoneosm100.html">Canon EOS M100</option>
+	<option value="canoneosm1002lensa.html">Canon EOS M100 + Kit 22mm </option>
+	<option value="canoneosm5.html">Canon EOS M5 </option>
+		<option value="canoneosm50.html">Canon EOS M50 </option>
+		<option value="canoneosm6.html">Canon EOS M6 </option>
+
+</select>
+</div>
+
+
+<div class="box-1">
+<button class="tombol" onclick="myReload()">Reset</button>
+</div>
+
+<div class="box-1">
+<button class="tombol" onclick="copyPromo()">Copy Promo</button>
+</div>
+
+
+
+<div class="box-1">
+<div class="content-box" id="content"> </div>
+</div>
+
+<div class="promo" id="copypromo">
+	<p>Promo Gratis 1x Angsuran <br>
+		Khusus Tenor 12bln, 15bln, 18bln & 24bln <br>
+		12bln menjadi 11bln <br>
+		15bln menjadi 14bln <br>
+		18bln menjadi 17bln <br>
+		24bln menjadi 23bln <br>
+		Periode 1 - 31 Maret 2019
+	</p>
+</div>
+
+
+<!--
+<select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Pick one:</option>
+    <option value="/foo">Foo</option>
+    <option value="/bar">Bar</option>
+</select>
+-->
+
+<script type="text/javascript">
+function load_home() {
+	var e = document.getElementById("seLect");
+	var openLink = e.options[e.selectedIndex].value;
+
+	var finalLink = '<object width="100%" height="500px" type="text/html" data='+ '"' + openLink+ '"'+'></object>'; 
+
+	console.log(finalLink);
+
+     //document.getElementById("content").innerHTML='<object type="text/html" data="google.html" ></object>';
+     document.getElementById("content").innerHTML = finalLink;
+
+}
+
+function myFunction() {
+  document.getElementById("seLect").selectedIndex = "null";
+}
+
+function copyPromo(){
+  var text = document.getElementById("copypromo");
+  var selection = window.getSelection();
+  var range = document.createRange();
+  range.selectNodeContents(text);
+  selection.removeAllRanges();
+  selection.addRange(range);
+  //add to clipboard.
+  document.execCommand('copy');
+}
+
+function myReload() {
+    location.reload();
+}
+
+
+</script>
+</body>
+</html>
