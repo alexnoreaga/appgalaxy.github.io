@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>List Harga</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+	<title>List Harga</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body >
 
 
 <div class="container">
 
-  <div class="box-title">
-    <p class="title">Harga Cash</p> 
-    <p class="hasil" id="hargaNormal"></p>
-  </div>
-  <div class="box-title">
-    <p class="title">Harga HCI Tenor Normal </p>
-    <p  class="hasil" id="hargaHciNormal"></p>
-  </div>
-  <div class="box-title">
-    <p class="title">Harga HCI Khusus Tenor 6 Bulan Bunga 0%</p>
-    <p class="hasil" id="hargaHci6Bulan"></p>
-  </div>
+	<div class="box-title">
+		<p class="title">Harga Cash</p>	
+		<p class="hasil" id="hargaNormal"></p>
+	</div>
+	<div class="box-title">
+		<p class="title">Harga HCI Tenor Normal </p>
+		<p  class="hasil" id="hargaHciNormal"></p>
+	</div>
+	<div class="box-title">
+		<p class="title">Harga HCI Khusus Tenor 6 Bulan Bunga 0%</p>
+		<p class="hasil" id="hargaHci6Bulan"></p>
+	</div>
 
-<div class="hasil-2"> 
+<div class="hasil-2">	
 <p id="hasilcicilan"></p>
 <button class="tombol" onclick="copyDivToClipBoard()">Copy Angsuran</button>
 
@@ -38,25 +38,25 @@
 <script type="text/javascript">
 
 
-let namaProduk = "Canon EOS M100 Kit 15-45mm";
-let hargaCash = 5990000;
-let cashBack = 300000;
+let namaProduk = "Fujifilm Instax Square SQ6";
+let hargaCash = 2049000;
+let cashBack = 0;
 let freeBawaan = 0;
 let freeClaim = 0;
-let garansi = "Garansi Resmi 1 Tahun Datascrip Indonesia";
+let garansi = "Garansi Resmi 1 Tahun Fujifilm Indonesia";
 let batasClaim = 0;
-let periode = "Periode 8 Maret - 31 Maret 2019";
+let periode = "Periode 1 Maret - 31 Maret 2019";
 let hargaCB = hargaCash - cashBack;
 let hargaHci = hargaCB;
-  
-  let n = namaProduk.includes("Canon");
-  if( n == true){
-    hargaHci = hargaCB + 150000;
-    
-  }
-  else {
-    hargaCB;
-  }
+	
+	let n = namaProduk.includes("Canon");
+	if( n == true){
+		hargaHci = hargaCB + 150000;
+		
+	}
+	else {
+		hargaCB;
+	}
 
 
 

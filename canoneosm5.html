@@ -43,7 +43,7 @@ let hargaCash = 13660000;
 let cashBack = 0;
 let freeBawaan = 0;
 let freeClaim = 0;
-let garansi = "Garansi Resmi Datascrip 1 Tahun";
+let garansi = "Garansi Resmi Datascrip 1 Tahun Canon Indonesia";
 let batasClaim = 0;
 let periode = "Periode 8 Maret - 31 Maret 2019";
 let hargaCB = hargaCash - cashBack;
@@ -57,6 +57,7 @@ let hargaHci = hargaCB;
 	else {
 		hargaCB;
 	}
+
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -176,7 +177,7 @@ var cicilan60Pasli = mathcicilan60P.toLocaleString(undefined,{minimumFractionDig
 //Cicilan Tenor 6 Bulan Bunga 0%
 
 
-
+/*
 document.getElementById("hasilcicilan").innerHTML =
 namaProduk + "<br>"
 + "DP : 0 (Cukup bayar biaya admin 200rb)" + "<br>"
@@ -201,6 +202,237 @@ namaProduk + "<br>"
 + periode
 ; //milik getElementById
 
+*/
+
+
+if(cashBack == 0 && freeBawaan == 0 && freeClaim == 0){
+  document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : 0 (Cukup bayar biaya admin 200rb)" + "<br>"
++ "9x : " + cicilan9_0asli + "<br>"
++ "12x : " + cicilan12_0asli + "<br>"
++ "15x : " + cicilan15_0asli + "<br>"
++ "18x : " + cicilan18_0asli + "<br>"
++ "24x : " + cicilan24_0asli + "<br>"
++ "<br>"
+
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpTerbaru60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+  + garansi + "<br>"
+  + periode ;
+}
+else if (cashBack == 0 && freeBawaan !== 0 && freeClaim == 0){
+  document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : 0 (Cukup bayar biaya admin 200rb)" + "<br>"
++ "9x : " + cicilan9_0asli + "<br>"
++ "12x : " + cicilan12_0asli + "<br>"
++ "15x : " + cicilan15_0asli + "<br>"
++ "18x : " + cicilan18_0asli + "<br>"
++ "24x : " + cicilan24_0asli + "<br>"
++ "<br>"
+
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpTerbaru60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+  + "Free : " + freeBawaan + "<br>"
+   + garansi + "<br>"
+  + periode ;
+}
+
+
+
+else if (cashBack !== 0 && freeBawaan == 0 && freeClaim == 0){
+  document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : 0 (Cukup bayar biaya admin 200rb)" + "<br>"
++ "9x : " + cicilan9_0asli + "<br>"
++ "12x : " + cicilan12_0asli + "<br>"
++ "15x : " + cicilan15_0asli + "<br>"
++ "18x : " + cicilan18_0asli + "<br>"
++ "24x : " + cicilan24_0asli + "<br>"
++ "<br>"
+
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpTerbaru60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+   + garansi + "<br>"
+  + periode ;
+}
+
+else if (cashBack == 0 && freeBawaan == 0 && freeClaim !== 0){
+  document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : 0 (Cukup bayar biaya admin 200rb)" + "<br>"
++ "9x : " + cicilan9_0asli + "<br>"
++ "12x : " + cicilan12_0asli + "<br>"
++ "15x : " + cicilan15_0asli + "<br>"
++ "18x : " + cicilan18_0asli + "<br>"
++ "24x : " + cicilan24_0asli + "<br>"
++ "<br>"
+
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpTerbaru60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+  + "Free Claim : " + freeClaim + "<br>"
+  + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
+   + garansi + "<br>"
+  + periode ;
+}
+
+else if (cashBack !== 0 && freeBawaan !== 0 && freeClaim == 0){
+  document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : 0 (Cukup bayar biaya admin 200rb)" + "<br>"
++ "9x : " + cicilan9_0asli + "<br>"
++ "12x : " + cicilan12_0asli + "<br>"
++ "15x : " + cicilan15_0asli + "<br>"
++ "18x : " + cicilan18_0asli + "<br>"
++ "24x : " + cicilan24_0asli + "<br>"
++ "<br>"
+
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpTerbaru60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+  + "Free : " + freeBawaan + "<br>"
+   + garansi + "<br>"
+  + periode ;
+}
+
+else if (cashBack !== 0 && freeBawaan == 0 && freeClaim !== 0){
+  document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : 0 (Cukup bayar biaya admin 200rb)" + "<br>"
++ "9x : " + cicilan9_0asli + "<br>"
++ "12x : " + cicilan12_0asli + "<br>"
++ "15x : " + cicilan15_0asli + "<br>"
++ "18x : " + cicilan18_0asli + "<br>"
++ "24x : " + cicilan24_0asli + "<br>"
++ "<br>"
+
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpTerbaru60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+  + "Free Claim : " + freeClaim + "<br>"
+  + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
+   + garansi + "<br>"
+  + periode ;
+}
+
+else if (cashBack !== 0 && freeBawaan !== 0 && freeClaim !== 0 ){
+  document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : 0 (Cukup bayar biaya admin 200rb)" + "<br>"
++ "9x : " + cicilan9_0asli + "<br>"
++ "12x : " + cicilan12_0asli + "<br>"
++ "15x : " + cicilan15_0asli + "<br>"
++ "18x : " + cicilan18_0asli + "<br>"
++ "24x : " + cicilan24_0asli + "<br>"
++ "<br>"
+
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpTerbaru60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+  + "Free : " + freeBawaan + "<br>"
+  + "Free Claim : " + freeClaim + "<br>"
+  + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
+   + garansi + "<br>"
+  + periode ;
+}
+
+else if (cashBack == 0 && freeBawaan !== 0 && freeClaim !== 0 ){
+  document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : 0 (Cukup bayar biaya admin 200rb)" + "<br>"
++ "9x : " + cicilan9_0asli + "<br>"
++ "12x : " + cicilan12_0asli + "<br>"
++ "15x : " + cicilan15_0asli + "<br>"
++ "18x : " + cicilan18_0asli + "<br>"
++ "24x : " + cicilan24_0asli + "<br>"
++ "<br>"
+
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpTerbaru60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+  + "Free : " + freeBawaan + "<br>"
+  + "Free Claim : " + freeClaim + "<br>"
+  + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
+   + garansi + "<br>"
+  + periode ;
+}
+
+
+
+
+
+else {
+  document.getElementById("final").innerHTML = "Maaf Kategori dan Free Produk Belum Terdaftar (Hubungi IT)"
+}
 
 
 }////// Khusus Produk dibawah 4.5 juta ENDING/////////////
@@ -258,7 +490,7 @@ var mathcicilan60P = Math.ceil(cicilan60P/100)*100;
 var cicilan60Pasli = mathcicilan60P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
 //Cicilan Tenor 6 Bulan Bunga 0%
 
-
+/*
 document.getElementById("hasilcicilan").innerHTML =
 namaProduk + "<br>"
 + "DP : " + DpBulatShowTime + "<br>"
@@ -272,8 +504,180 @@ namaProduk + "<br>"
 + "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
-+ periode
-; //milik getElementById
++ periode; //milik getElementById
+
+*/
+
+
+
+
+if(cashBack == 0 && freeBawaan == 0 && freeClaim == 0){
+  document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpTerbaru60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+  + garansi + "<br>"
+  + periode ;
+}
+else if (cashBack == 0 && freeBawaan !== 0 && freeClaim == 0){
+  document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpTerbaru60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+  + "Free : " + freeBawaan + "<br>"
+   + garansi + "<br>"
+  + periode ;
+}
+
+
+
+else if (cashBack !== 0 && freeBawaan == 0 && freeClaim == 0){
+  document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpTerbaru60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+   + garansi + "<br>"
+  + periode ;
+}
+
+else if (cashBack == 0 && freeBawaan == 0 && freeClaim !== 0){
+  document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpTerbaru60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+  + "Free Claim : " + freeClaim + "<br>"
+  + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
+   + garansi + "<br>"
+  + periode ;
+}
+
+else if (cashBack !== 0 && freeBawaan !== 0 && freeClaim == 0){
+  document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpTerbaru60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+  + "Free : " + freeBawaan + "<br>"
+   + garansi + "<br>"
+  + periode ;
+}
+
+else if (cashBack !== 0 && freeBawaan == 0 && freeClaim !== 0){
+  document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpTerbaru60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+  + "Free Claim : " + freeClaim + "<br>"
+  + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
+   + garansi + "<br>"
+  + periode ;
+}
+
+else if (cashBack !== 0 && freeBawaan !== 0 && freeClaim !== 0 ){
+  document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpTerbaru60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+  + "Free : " + freeBawaan + "<br>"
+  + "Free Claim : " + freeClaim + "<br>"
+  + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
+   + garansi + "<br>"
+  + periode ;
+}
+
+else if (cashBack == 0 && freeBawaan !== 0 && freeClaim !== 0 ){
+  document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpTerbaru60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+  + "Free : " + freeBawaan + "<br>"
+  + "Free Claim : " + freeClaim + "<br>"
+  + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
+   + garansi + "<br>"
+  + periode ;
+}
+
+
+
+
+
+else {
+  document.getElementById("final").innerHTML = "Maaf Kategori dan Free Produk Belum Terdaftar (Hubungi IT)"
+}
+
+
+
 
 
 } ////// Khusus Produk dibawah 15 juta ENDING ////////////
@@ -339,7 +743,7 @@ var mathcicilan60P = Math.ceil(cicilan60P/100)*100;
 var cicilan60Pasli = mathcicilan60P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
 
 //Cicilan Tenor 6 Bulan Bunga 0%
-
+/*
 //Hasil cicilan untuk semua tenor khusus produk dibawah 15jt
 document.getElementById("hasilcicilan").innerHTML =
 namaProduk + "<br>"
@@ -354,8 +758,176 @@ namaProduk + "<br>"
 + "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
 + "DP : " + DpBulat60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
-+ periode
-; //milik getElementById
++ periode; //milik getElementById
+
+*/
+
+
+if(cashBack == 0 && freeBawaan == 0 && freeClaim == 0){
+  document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpBulat60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
++ garansi + "<br>"
++ periode ;
+}
+
+else if (cashBack == 0 && freeBawaan !== 0 && freeClaim == 0){
+    document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpBulat60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+  + "Free : " + freeBawaan + "<br>"
+   + garansi + "<br>"
+  + periode ;
+}
+
+
+
+else if (cashBack !== 0 && freeBawaan == 0 && freeClaim == 0){
+    document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpBulat60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+   + garansi + "<br>"
+  + periode ;
+}
+
+else if (cashBack == 0 && freeBawaan == 0 && freeClaim !== 0){
+    document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpBulat60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+  + "Free Claim : " + freeClaim + "<br>"
+  + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
+   + garansi + "<br>"
+  + periode ;
+}
+
+else if (cashBack !== 0 && freeBawaan !== 0 && freeClaim == 0){
+    document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpBulat60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+  + "Free : " + freeBawaan + "<br>"
+   + garansi + "<br>"
+  + periode ;
+}
+
+else if (cashBack !== 0 && freeBawaan == 0 && freeClaim !== 0){
+    document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpBulat60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+  + "Free Claim : " + freeClaim + "<br>"
+  + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
+   + garansi + "<br>"
+  + periode ;
+}
+
+else if (cashBack !== 0 && freeBawaan !== 0 && freeClaim !== 0 ){
+    document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpBulat60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+  + "Free : " + freeBawaan + "<br>"
+  + "Free Claim : " + freeClaim + "<br>"
+  + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
+   + garansi + "<br>"
+  + periode ;
+}
+
+else if (cashBack == 0 && freeBawaan !== 0 && freeClaim !== 0 ){
+    document.getElementById("hasilcicilan").innerHTML =
+namaProduk + "<br>"
++ "DP : " + DpBulatShowTime + "<br>"
++ "9x : " + cicilan9asli + "<br>"
++ "12x : " + cicilan12asli + "<br>"
++ "15x : " + cicilan15asli + "<br>"
++ "18x : " + cicilan18asli + "<br>"
++ "24x : " + cicilan24asli + "<br>"
++ "<br>"
+
++ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
++ "DP : " + DpBulat60PShowTime + "<br>"
++ "6x : " + cicilan60Pasli + "<br>"
+  + "Free : " + freeBawaan + "<br>"
+  + "Free Claim : " + freeClaim + "<br>"
+  + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
+   + garansi + "<br>"
+  + periode ;
+}
+
+
+
+
+
+else {
+  document.getElementById("final").innerHTML = "Maaf Kategori dan Free Produk Belum Terdaftar (Hubungi IT)"
+}
 
 
 } ////// Khusus Produk diatas 15 juta ENDING ////////////
