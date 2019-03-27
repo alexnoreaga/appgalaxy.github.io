@@ -22,6 +22,23 @@ button:hover{
 	cursor: pointer;
 }
 
+a {
+	text-decoration: none;
+}
+
+ul a :hover{
+color: #333333;
+background-color:#f2f2f2;
+
+}
+
+
+.kaki a{
+	text-decoration: none;
+	  color:#a6a6a6;
+}
+
+
 .clr{
 	clear:both;
 }
@@ -92,20 +109,67 @@ div .content-box{
 	text-align: center;
 	font-size:0.9em;
 	line-height: 1.5em;
+	margin-bottom:50px;
 }
 
 
-.versi{
+.kaki{
   position: fixed;
   bottom:0;
   left:0;
   right:0;
   width:100%;
-  background-color:#f2f2f2;
+background-color:white;
   font-size:0.9em;
-  color:#333333;
-  padding:3px;
-  text-align: center;
-  line-height: 1.3em;
+  color:#a6a6a6;
 
+  text-align: center;
+  margin-top:20px;
+
+
+}
+
+
+.menu{
+	float:left;
+	width:25%;
+	border-right:0.8px solid #a6a6a6;
+	box-sizing: border-box;
+	padding:5px;
+}
+
+.menu:hover{
+	float:left;
+	box-sizing: border-box;
+	color:#666666;
+	
+		cursor: pointer;
+		
+		font-weight: bold;
+}
+
+.versi{
+	font-size:0.8em;
+	text-align: center;
+	margin-top:0;
+	color:grey;
+}
+
+
+.drone{
+	list-style: none;
+	text-align: center;
+	padding-left:0;
+
+}
+
+.drone li{
+	border-bottom:0.7px solid #f2f2f2;
+	padding:10px;
+	color:grey;
+}
+
+.hasil-new{
+		font-size:1em;
+font-weight: bold;
 }
