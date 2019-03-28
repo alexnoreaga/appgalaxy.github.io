@@ -8,7 +8,10 @@
 
 
 <div class="container">
-
+  <div class="box-title">
+    <p class="title">Nama Produk</p> 
+    <p class="hasil-new" id="nama-produk"></p>
+  </div>
 	<div class="box-title">
 		<p class="title">Harga Cash</p>	
 		<p class="hasil" id="hargaNormal"></p>
@@ -22,8 +25,8 @@
 		<p class="hasil" id="hargaHci6Bulan"></p>
 	</div>
 
-<div class="hasil-2">	
-<p id="hasilcicilan"></p>
+<div class="hasil-2"> 
+<p id="hasilcicilan">Produk tidak dapat di kredit karena dibawah 1.5jt</p>
 <button class="tombol" onclick="copyDivToClipBoard()">Copy Angsuran</button>
 
 <p id="final"></p>
@@ -73,7 +76,7 @@ let hargaHciShowTime = hargaHci.toLocaleString(undefined,{minimumFractionDigits:
 
 
 
-
+document.getElementById("nama-produk").innerHTML = namaProduk;
 document.getElementById("hargaNormal").innerHTML = hargaCBShowTime;
 document.getElementById("hargaHciNormal").innerHTML = hargaHciShowTime;
 

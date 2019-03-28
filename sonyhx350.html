@@ -8,7 +8,10 @@
 
 
 <div class="container">
-
+  <div class="box-title">
+    <p class="title">Nama Produk</p> 
+    <p class="hasil-new" id="nama-produk"></p>
+  </div>
 	<div class="box-title">
 		<p class="title">Harga Cash</p>	
 		<p class="hasil" id="hargaNormal"></p>
@@ -22,8 +25,8 @@
 		<p class="hasil" id="hargaHci6Bulan"></p>
 	</div>
 
-<div class="hasil-2">	
-<p id="hasilcicilan"></p>
+<div class="hasil-2"> 
+<p id="hasilcicilan">Produk tidak dapat di kredit karena dibawah 1.5jt</p>
 <button class="tombol" onclick="copyDivToClipBoard()">Copy Angsuran</button>
 
 <p id="final"></p>
@@ -60,7 +63,7 @@ let hargaHci = hargaCB;
 
 
 
-/////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////DARI SINI //////////////////////////////////////////////////////////////
 
 let hargaCashShowTime = hargaCash.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
 let cashBackShowTime = cashBack.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
@@ -72,7 +75,7 @@ let hargaHciShowTime = hargaHci.toLocaleString(undefined,{minimumFractionDigits:
 
 
 
-
+document.getElementById("nama-produk").innerHTML = namaProduk;
 document.getElementById("hargaNormal").innerHTML = hargaCBShowTime;
 document.getElementById("hargaHciNormal").innerHTML = hargaHciShowTime;
 
@@ -89,7 +92,7 @@ document.getElementById("hargaHci6Bulan").innerHTML = hargaTerbaru60PShowTime;
 
 
 ////// Khusus Produk dibawah 4.5 juta START /////////////
- if(hargaHci <=4500000) {
+ if(hargaHci <=4500000 && hargaHci >= 1500000) {
 
    var Dp = 0 ; // mengkonversikan 10% dari harga asli ditambah biaya adm 200rb
 
@@ -176,33 +179,6 @@ var cicilan60Pasli = mathcicilan60P.toLocaleString(undefined,{minimumFractionDig
 
 //Cicilan Tenor 6 Bulan Bunga 0%
 
-
-/*
-document.getElementById("hasilcicilan").innerHTML =
-namaProduk + "<br>"
-+ "DP : 0 (Cukup bayar biaya admin 200rb)" + "<br>"
-+ "9x : " + cicilan9_0asli + "<br>"
-+ "12x : " + cicilan12_0asli + "<br>"
-+ "15x : " + cicilan15_0asli + "<br>"
-+ "18x : " + cicilan18_0asli + "<br>"
-+ "24x : " + cicilan24_0asli + "<br>"
-+ "<br>"
-
-+ "DP : " + DpBulatShowTime + "<br>"
-+ "9x : " + cicilan9asli + "<br>"
-+ "12x : " + cicilan12asli + "<br>"
-+ "15x : " + cicilan15asli + "<br>"
-+ "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
-+ "<br>"
-
-+ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
-+ "DP : " + DpTerbaru60PShowTime + "<br>"
-+ "6x : " + cicilan60Pasli + "<br>"
-+ periode
-; //milik getElementById
-
-*/
 
 
 if(cashBack == 0 && freeBawaan == 0 && freeClaim == 0){
@@ -440,7 +416,7 @@ else {
 
 
 ////// Khusus Produk dibawah 15 juta START ////////////
-  else if(hargaHci <= 15000000){
+  else if(hargaHci <= 15000000  && hargaHci >= 1500000){
 
 ////////////////////Cicilan Tenor Normal//////////////////////////
       var Dp = (hargaHci *10 /100) + 200000; // mengkonversikan 10% dari harga asli ditambah biaya adm 200rb
@@ -476,39 +452,40 @@ else {
 //Cicilan Tenor 6 Bulan Bunga 0%
 var biayaAdm60P = hargaCB *5.5 /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
 var hargaTerbaru60P = hargaCB + biayaAdm60P; //harga terbaru setelah ditambah 4% admin
+
+// Problem dikolom ini
 var hargaBulat60P = Math.ceil(hargaTerbaru60P / 100) * 100; //membulatkan kelipatan 100 perak
 var hargaBulat60PShowTime = hargaBulat60P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
+console.log(hargaTerbaru60P);
 
+var hargaTerbaru60PP = hargaBulat60P ; //untuk mengecek bahwa setelah ditambah 5.5% apakah masih dibawah 15jt jika diatas 15jt maka berjalan rumus IF dibawah
+
+if (hargaTerbaru60PP > 15000000){
+  DpMentah60P = (hargaTerbaru60PP + 1700000) - 15000000;
+}
+else {
+  DpMentah60P = (hargaBulat60P *10 /100) + 200000;
+
+}
+console.log(DpMentah60P);
+console.log(hargaTerbaru60PP);
+
+/*
 var DpMentah60P = (hargaBulat60P *10 /100) + 200000; // mengkonversikan 10% dari harga asli
+*/
+
+
+
 var DpTerbaru60P = Math.ceil(DpMentah60P / 50000) * 50000; //membulatkan kelipatan 50rb
+
 var DpTerbaru60PShowTime = DpTerbaru60P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
 var DpSesungguhnya60P = DpTerbaru60P - 199000;
-var HargaSesungguhnya60P = hargaBulat60P - DpSesungguhnya60P;
+var HargaSesungguhnya60P = hargaTerbaru60PP - DpSesungguhnya60P;
 
 var cicilan60P = (HargaSesungguhnya60P / 6  ) + Admin ;
 var mathcicilan60P = Math.ceil(cicilan60P/100)*100;
 var cicilan60Pasli = mathcicilan60P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
 //Cicilan Tenor 6 Bulan Bunga 0%
-
-/*
-document.getElementById("hasilcicilan").innerHTML =
-namaProduk + "<br>"
-+ "DP : " + DpBulatShowTime + "<br>"
-+ "9x : " + cicilan9asli + "<br>"
-+ "12x : " + cicilan12asli + "<br>"
-+ "15x : " + cicilan15asli + "<br>"
-+ "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
-+ "<br>"
-
-+ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
-+ "DP : " + DpTerbaru60PShowTime + "<br>"
-+ "6x : " + cicilan60Pasli + "<br>"
-+ periode; //milik getElementById
-
-*/
-
-
 
 
 if(cashBack == 0 && freeBawaan == 0 && freeClaim == 0){
@@ -525,6 +502,7 @@ namaProduk + "<br>"
 + "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
+  + garansi + "<br>"
   + periode ;
 }
 else if (cashBack == 0 && freeBawaan !== 0 && freeClaim == 0){

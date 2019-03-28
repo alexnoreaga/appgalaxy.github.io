@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>App Cicilan</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<header>
+      <a  href="#" ><img class="logo" height="45px;"src="../images/logo.png"></a>
+      <p class="versi">Versi 4</p>
+    </header>
+
+<!--
+<div id="topBar"> <a href ="#" onclick="load_home()"> HOME </a> </div>
+-->
+<ul class="lensa">
+		<a href="7artisan.html"><li>7 Artisan</li></a>
+		<a href="canon.html"><li>Canon</li></a>
+		<a href="fujifilm.html"><li>Fujifilm</li></a>
+		<a href="nikon.html"><li>Nikon</li></a>
+		<a href="meike.html"><li>Meike</li></a>
+		<a href="sony.html"><li>Sony</li></a>
+		<a href="tamron.html"><li>Tamron</li></a>
+    <a href="yongnuo.html"><li>Yongnuo</li></a>
+
+	</ul>
+
+
+
+
+<footer>
+<div class="kaki">
+  <a href="javascript:history.go(-1)"><p class="menu">Back</p></a>
+  <a href="#"><p class="menu"></p></a>
+  <a href="#"><p class="menu"></p></a>
+  <a href="../index.html"><p class="menu">Home</p></a>
+</div>
+<div class="clr"></div>
+</footer>
+
+
+
+<!--
+<select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Pick one:</option>
+    <option value="/foo">Foo</option>
+    <option value="/bar">Bar</option>
+</select>
+-->
+
+<script type="text/javascript">
+function load_home() {
+	var e = document.getElementById("seLect");
+	var openLink = e.options[e.selectedIndex].value;
+
+	var finalLink = '<object width="100%" height="500px" type="text/html" data='+ '"' + openLink+ '"'+'></object>'; 
+
+	console.log(finalLink);
+
+     //document.getElementById("content").innerHTML='<object type="text/html" data="google.html" ></object>';
+     document.getElementById("content").innerHTML = finalLink;
+
+}
+
+function myFunction() {
+  document.getElementById("seLect").selectedIndex = "null";
+}
+
+function copyPromo(){
+  var text = document.getElementById("copypromo");
+  var selection = window.getSelection();
+  var range = document.createRange();
+  range.selectNodeContents(text);
+  selection.removeAllRanges();
+  selection.addRange(range);
+  //add to clipboard.
+  document.execCommand('copy');
+}
+
+function myReload() {
+    location.reload();
+}
+
+
+</script>
+</body>
+</html>
