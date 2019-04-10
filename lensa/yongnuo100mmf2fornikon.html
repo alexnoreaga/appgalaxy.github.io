@@ -2,13 +2,13 @@
 <html>
 <head>
 	<title>List Harga</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body >
 
 
 <div class="container">
-  <div class="box-title">
+<div class="box-title">
     <p class="title">Nama Produk</p> 
     <p class="hasil-new" id="nama-produk"></p>
   </div>
@@ -25,7 +25,7 @@
 		<p class="hasil" id="hargaHci6Bulan"></p>
 	</div>
 
-<div class="hasil-2"> 
+<div class="hasil-2">	
 <p id="hasilcicilan">Produk tidak dapat di kredit karena dibawah 1.5jt</p>
 <button class="tombol" onclick="copyDivToClipBoard()">Copy Angsuran</button>
 
@@ -35,31 +35,32 @@
 </div>
 
 
+<footer>
+<div class="kaki">
+  <a href="javascript:history.go(-1)"><p class="menu">Back</p></a>
+  <a href="#"><p class="menu"></p></a>
+  <a href="#"><p class="menu"></p></a>
+  <a href="../index.html"><p class="menu">Home</p></a>
+</div>
+<div class="clr"></div>
+</footer>
 
 
 
 <script type="text/javascript">
 
 
-let namaProduk = "Nikon D5500 Kit 18-55mm";
-let hargaCash = 9350000;
+let namaProduk = "Yongnuo YN100mm F/2 For Nikon";
+let hargaCash = 2850000;
 let cashBack = 0;
-let freeBawaan = "Memory Sandisk 16gb, Filter UV, Tas Kamera, Mini Tripod" ;
+let freeBawaan = 0;
 let freeClaim = 0;
-let garansi = "Garansi 1 Tahun";
+let garansi = " ";
 let batasClaim = 0;
 let periode = " ";
 let hargaCB = hargaCash - cashBack;
 let hargaHci = hargaCB;
 	
-	let n = namaProduk.includes("Canon");
-	if( n == true){
-		hargaHci = hargaCB + 150000;
-		
-	}
-	else {
-		hargaCB;
-	}
 
 
 

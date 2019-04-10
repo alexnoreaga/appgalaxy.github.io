@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>List Harga</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <title>List Harga</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body >
 
@@ -12,18 +12,18 @@
     <p class="title">Nama Produk</p> 
     <p class="hasil-new" id="nama-produk"></p>
   </div>
-	<div class="box-title">
-		<p class="title">Harga Cash</p>	
-		<p class="hasil" id="hargaNormal"></p>
-	</div>
-	<div class="box-title">
-		<p class="title">Harga HCI Tenor Normal </p>
-		<p  class="hasil" id="hargaHciNormal"></p>
-	</div>
-	<div class="box-title">
-		<p class="title">Harga HCI Khusus Tenor 6 Bulan Bunga 0%</p>
-		<p class="hasil" id="hargaHci6Bulan"></p>
-	</div>
+  <div class="box-title">
+    <p class="title">Harga Cash</p> 
+    <p class="hasil" id="hargaNormal"></p>
+  </div>
+  <div class="box-title">
+    <p class="title">Harga HCI Tenor Normal </p>
+    <p  class="hasil" id="hargaHciNormal"></p>
+  </div>
+  <div class="box-title">
+    <p class="title">Harga HCI Khusus Tenor 6 Bulan Bunga 0%</p>
+    <p class="hasil" id="hargaHci6Bulan"></p>
+  </div>
 
 <div class="hasil-2"> 
 <p id="hasilcicilan">Produk tidak dapat di kredit karena dibawah 1.5jt</p>
@@ -41,26 +41,25 @@
 <script type="text/javascript">
 
 
-let namaProduk = "Nikon D5500 Kit 18-55mm";
-let hargaCash = 9350000;
-let cashBack = 0;
-let freeBawaan = "Memory Sandisk 16gb, Filter UV, Tas Kamera, Mini Tripod" ;
-let freeClaim = 0;
-let garansi = "Garansi 1 Tahun";
-let batasClaim = 0;
-let periode = " ";
+let namaProduk = "Fujifilm X-T20 Body";
+let hargaCash = 12999000;
+let cashBack = 2000000;
+let freeBawaan = "Instax Share SP-2";
+let freeClaim = "Sirui Slinglite 8 Bag";
+let garansi = "Garansi Resmi 1 Tahun Fujifilm Indonesia";
+let batasClaim = "19 Mei 2019";
+let periode = " Periode 3 April - 30 April 2019";
 let hargaCB = hargaCash - cashBack;
 let hargaHci = hargaCB;
-	
-	let n = namaProduk.includes("Canon");
-	if( n == true){
-		hargaHci = hargaCB + 150000;
-		
-	}
-	else {
-		hargaCB;
-	}
-
+  
+  let n = namaProduk.includes("Canon");
+  if( n == true){
+    hargaHci = hargaCB + 150000;
+    
+  }
+  else {
+    hargaCB;
+  }
 
 
 
