@@ -51,16 +51,18 @@ let batasClaim = 0;
 let periode = " ";
 let hargaCB = hargaCash - cashBack;
 let hargaHci = hargaCB;
-	
-	let n = namaProduk.includes("Canon");
-	if( n == true){
-		hargaHci = hargaCB + 150000;
-		
-	}
-	else {
-		hargaCB;
-	}
-
+let bunga69 = 2.29; // BUNGA TENOR 9 BULAN 
+let bunga1224 = 3.69; // BUNGA TENOR 12, 15, 18 & 24 BULAN
+let bungaAdmin = 5.5; // BIAYA ADMIN PROMO LOKAL 0%
+  
+  let n = namaProduk.includes("Canon");
+  if( n == true){
+    hargaHci = hargaCB + 150000;
+    
+  }
+  else {
+    hargaCB;
+  }
 
 
 
@@ -82,7 +84,7 @@ document.getElementById("nama-produk").innerHTML = namaProduk;
 document.getElementById("hargaNormal").innerHTML = hargaCBShowTime;
 document.getElementById("hargaHciNormal").innerHTML = hargaHciShowTime;
 
-var biayaAdm60P = hargaCB *5.5 /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
+var biayaAdm60P = hargaCB *bungaAdmin /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
 var hargaTerbaru60P = hargaCB + biayaAdm60P; //harga terbaru setelah ditambah 5.5% admin
 var hargaTerbaru60PLipat = Math.ceil(hargaTerbaru60P/100)*100;
 let hargaTerbaru60PShowTime = hargaTerbaru60PLipat.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
@@ -99,8 +101,8 @@ document.getElementById("hargaHci6Bulan").innerHTML = hargaTerbaru60PShowTime;
 
    var Dp = 0 ; // mengkonversikan 10% dari harga asli ditambah biaya adm 200rb
 
-   var BungaDp0_9 = (hargaHci *2.29 / 100); // Bunga dari tenor 9 Bulan
-   var BungaDp0_N = (hargaHci *2.69 / 100); // Bunga dari tenor 12 sampai 24 Bulan
+   var BungaDp0_9 = (hargaHci * bunga69 / 100); // Bunga dari tenor 9 Bulan
+   var BungaDp0_N = (hargaHci *bunga1224 / 100); // Bunga dari tenor 12 sampai 24 Bulan
    var Admin = 5000;
 
    var cicilan9_0 = (hargaHci / 9) + BungaDp0_9 + Admin;
@@ -134,8 +136,8 @@ document.getElementById("hargaHci6Bulan").innerHTML = hargaTerbaru60PShowTime;
       var DpBulatShowTime = DpBulat.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
       var DpSesungguhnya = DpBulat - 199000;
       var HargaSesungguhnya = hargaHci - DpSesungguhnya;
-      var BungaNormal = (HargaSesungguhnya *2.69 / 100); // Seharusnya harga asli
-      var Bunga9Bulan = (HargaSesungguhnya * 2.29/100);  // Seharusnya harga asli
+      var BungaNormal = (HargaSesungguhnya * bunga1224 / 100); // Seharusnya harga asli
+      var Bunga9Bulan = (HargaSesungguhnya *  bunga69 /100);  // Seharusnya harga asli
       var Admin = 5000;
       var cicilan9 = (HargaSesungguhnya / 9) + Bunga9Bulan + Admin;
       var cicilan12 = (HargaSesungguhnya / 12) + BungaNormal + Admin;
@@ -161,7 +163,7 @@ document.getElementById("hargaHci6Bulan").innerHTML = hargaTerbaru60PShowTime;
 
 
 
-var biayaAdm60P = hargaCB *5.5 /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
+var biayaAdm60P = hargaCB * bungaAdmin /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
 var hargaTerbaru60P = hargaCB + biayaAdm60P; //harga terbaru setelah ditambah 5.5% admin
 
 var hargaBulat60P = Math.ceil(hargaTerbaru60P / 100) * 100; //membulatkan kelipatan 100 perak
@@ -427,8 +429,8 @@ else {
       var DpBulatShowTime = DpBulat.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
       var DpSesungguhnya = DpBulat - 199000;
       var HargaSesungguhnya = hargaHci - DpSesungguhnya;
-      var BungaNormal = (HargaSesungguhnya *2.69 / 100); // Seharusnya harga asli
-      var Bunga9Bulan = (HargaSesungguhnya * 2.29/100);  // Seharusnya harga asli
+      var BungaNormal = (HargaSesungguhnya * bunga1224 / 100); // Seharusnya harga asli
+      var Bunga9Bulan = (HargaSesungguhnya *  bunga69 /100);  // Seharusnya harga asli
       var Admin = 5000;
       var cicilan9 = (HargaSesungguhnya / 9) + Bunga9Bulan + Admin;
       var cicilan12 = (HargaSesungguhnya / 12) + BungaNormal + Admin;
@@ -453,7 +455,7 @@ else {
 
 
 //Cicilan Tenor 6 Bulan Bunga 0%
-var biayaAdm60P = hargaCB *5.5 /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
+var biayaAdm60P = hargaCB * bungaAdmin /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
 var hargaTerbaru60P = hargaCB + biayaAdm60P; //harga terbaru setelah ditambah 4% admin
 
 // Problem dikolom ini
@@ -680,8 +682,8 @@ else if (hargaHci >15000000){
   var DpBulatShowTime = DpBulat.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
   var DpSesungguhnya = DpBulat - 199000;
   var HargaSesungguhnya = hargaHci - DpSesungguhnya;
-  var BungaNormal = (HargaSesungguhnya *2.69 / 100);
-  var Bunga9Bulan = (HargaSesungguhnya * 2.29/100);
+  var BungaNormal = (HargaSesungguhnya * bunga1224 / 100);
+  var Bunga9Bulan = (HargaSesungguhnya *  bunga69 /100);
   var Admin = 5000;
   var cicilan9 = (HargaSesungguhnya / 9) + Bunga9Bulan + Admin;
   var cicilan12 = (HargaSesungguhnya / 12) + BungaNormal + Admin;
@@ -704,7 +706,7 @@ else if (hargaHci >15000000){
 
 
 //Cicilan Tenor 6 Bulan Bunga 0%
-var biayaAdm60P = hargaCB *5.5 /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
+var biayaAdm60P = hargaCB * bungaAdmin /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
 var hargaTerbaru60P = hargaCB + biayaAdm60P; //harga terbaru setelah ditambah 4% admin
 var hargaBulat60P = Math.ceil(hargaTerbaru60P / 100) * 100; //membulatkan kelipatan 50rb
 var hargaBulat60PShowTime = hargaBulat60P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
