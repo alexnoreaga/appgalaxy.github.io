@@ -2,13 +2,13 @@
 <html>
 <head>
 	<title>List Harga</title>
-	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body >
 
 
 <div class="container">
-<div class="box-title">
+  <div class="box-title">
     <p class="title">Nama Produk</p> 
     <p class="hasil-new" id="nama-produk"></p>
   </div>
@@ -25,7 +25,7 @@
 		<p class="hasil" id="hargaHci6Bulan"></p>
 	</div>
 
-<div class="hasil-2">	
+<div class="hasil-2"> 
 <p id="hasilcicilan">Produk tidak dapat di kredit karena dibawah 1.5jt</p>
 <button class="tombol" onclick="copyDivToClipBoard()">Copy Angsuran</button>
 
@@ -35,24 +35,15 @@
 </div>
 
 
-<footer>
-<div class="kaki">
-  <a href="javascript:history.go(-1)"><p class="menu">Back</p></a>
-  <a href="#"><p class="menu"></p></a>
-  <a href="#"><p class="menu"></p></a>
-  <a href="../index.html"><p class="menu">Home</p></a>
-</div>
-<div class="clr"></div>
-</footer>
 
 
 
 <script type="text/javascript">
 
 
-let namaProduk = "Sony E 35mm F/1.8 OSS";
-let hargaCash = 4499000;
-let cashBack = 500000;
+let namaProduk = "Sony A6000 Kit + E 35mm F1.8";
+let hargaCash = 13498000;
+let cashBack = 3000000;
 let freeBawaan = 0;
 let freeClaim = 0;
 let garansi = "Garansi Resmi 1 Tahun Sony Indonesia";
@@ -62,8 +53,16 @@ let hargaCB = hargaCash - cashBack;
 let hargaHci = hargaCB;
 let bunga69 = 2.29; // BUNGA TENOR 9 BULAN 
 let bunga1224 = 3.69; // BUNGA TENOR 12, 15, 18 & 24 BULAN
-let bungaAdmin = 6.5; // BIAYA ADMIN PROMO LOKAL 0% 
-
+let bungaAdmin = 6.5; // BIAYA ADMIN PROMO LOKAL 0%
+  
+  let n = namaProduk.includes("Canon");
+  if( n == true){
+    hargaHci = hargaCB + 150000;
+    
+  }
+  else {
+    hargaCB;
+  }
 
 
 
@@ -85,7 +84,7 @@ document.getElementById("nama-produk").innerHTML = namaProduk;
 document.getElementById("hargaNormal").innerHTML = hargaCBShowTime;
 document.getElementById("hargaHciNormal").innerHTML = hargaHciShowTime;
 
-var biayaAdm60P = hargaCB * bungaAdmin /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
+var biayaAdm60P = hargaCB *bungaAdmin /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
 var hargaTerbaru60P = hargaCB + biayaAdm60P; //harga terbaru setelah ditambah 5.5% admin
 var hargaTerbaru60PLipat = Math.ceil(hargaTerbaru60P/100)*100;
 let hargaTerbaru60PShowTime = hargaTerbaru60PLipat.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
@@ -103,7 +102,7 @@ document.getElementById("hargaHci6Bulan").innerHTML = hargaTerbaru60PShowTime;
    var Dp = 0 ; // mengkonversikan 10% dari harga asli ditambah biaya adm 200rb
 
    var BungaDp0_9 = (hargaHci * bunga69 / 100); // Bunga dari tenor 9 Bulan
-   var BungaDp0_N = (hargaHci * bunga1224 / 100); // Bunga dari tenor 12 sampai 24 Bulan
+   var BungaDp0_N = (hargaHci *bunga1224 / 100); // Bunga dari tenor 12 sampai 24 Bulan
    var Admin = 5000;
 
    var cicilan9_0 = (hargaHci / 9) + BungaDp0_9 + Admin;
@@ -137,8 +136,8 @@ document.getElementById("hargaHci6Bulan").innerHTML = hargaTerbaru60PShowTime;
       var DpBulatShowTime = DpBulat.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
       var DpSesungguhnya = DpBulat - 199000;
       var HargaSesungguhnya = hargaHci - DpSesungguhnya;
-      var BungaNormal = (HargaSesungguhnya * bunga1224 / 100); // Tenor Normal Seharusnya harga asli
-      var Bunga9Bulan = (HargaSesungguhnya * bunga69/100);  // Tenor 9 Bulan ,Seharusnya harga asli
+      var BungaNormal = (HargaSesungguhnya * bunga1224 / 100); // Seharusnya harga asli
+      var Bunga9Bulan = (HargaSesungguhnya *  bunga69 /100);  // Seharusnya harga asli
       var Admin = 5000;
       var cicilan9 = (HargaSesungguhnya / 9) + Bunga9Bulan + Admin;
       var cicilan12 = (HargaSesungguhnya / 12) + BungaNormal + Admin;
@@ -431,7 +430,7 @@ else {
       var DpSesungguhnya = DpBulat - 199000;
       var HargaSesungguhnya = hargaHci - DpSesungguhnya;
       var BungaNormal = (HargaSesungguhnya * bunga1224 / 100); // Seharusnya harga asli
-      var Bunga9Bulan = (HargaSesungguhnya * bunga69 /100);  // Seharusnya harga asli
+      var Bunga9Bulan = (HargaSesungguhnya *  bunga69 /100);  // Seharusnya harga asli
       var Admin = 5000;
       var cicilan9 = (HargaSesungguhnya / 9) + Bunga9Bulan + Admin;
       var cicilan12 = (HargaSesungguhnya / 12) + BungaNormal + Admin;
@@ -684,7 +683,7 @@ else if (hargaHci >15000000){
   var DpSesungguhnya = DpBulat - 199000;
   var HargaSesungguhnya = hargaHci - DpSesungguhnya;
   var BungaNormal = (HargaSesungguhnya * bunga1224 / 100);
-  var Bunga9Bulan = (HargaSesungguhnya * bunga69 /100);
+  var Bunga9Bulan = (HargaSesungguhnya *  bunga69 /100);
   var Admin = 5000;
   var cicilan9 = (HargaSesungguhnya / 9) + Bunga9Bulan + Admin;
   var cicilan12 = (HargaSesungguhnya / 12) + BungaNormal + Admin;
