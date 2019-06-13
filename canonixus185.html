@@ -2,16 +2,18 @@
 <html>
 <head>
   <title>List Harga</title>
-  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body >
 
 
 <div class="container">
-<div class="box-title">
+
+  <div class="box-title">
     <p class="title">Nama Produk</p> 
     <p class="hasil-new" id="nama-produk"></p>
   </div>
+
   <div class="box-title">
     <p class="title">Harga Cash</p> 
     <p class="hasil" id="hargaNormal"></p>
@@ -24,15 +26,15 @@
     <p class="title">Harga HCI Khusus Tenor 6 Bulan Bunga 0%</p>
     <p class="hasil" id="hargaHci6Bulan"></p>
   </div>
-
-    <!--- TEMPORARY ---->
+  <!--- TEMPORARY ---->
   <div class="box-title">
     <p class="title">Harga HCI Khusus Tenor 4 Bulan Bunga 0%</p>
     <p class="hasil" id="hargaHci4Bulan"></p>
   </div>
 
   <!-------------------->
-<div class="hasil-2">	
+
+<div class="hasil-2"> 
 <p id="hasilcicilan">Produk tidak dapat di kredit karena dibawah 1.5jt</p>
 <button class="tombol" onclick="copyDivToClipBoard()">Copy Angsuran</button>
 
@@ -42,23 +44,15 @@
 </div>
 
 
-<footer>
-<div class="kaki">
-  <a href="javascript:history.go(-1)"><p class="menu">Back</p></a>
-  <a href="#"><p class="menu"></p></a>
-  <a href="#"><p class="menu"></p></a>
-  <a href="../index.html"><p class="menu">Home</p></a>
-</div>
-<div class="clr"></div>
-</footer>
+
 
 
 
 <script type="text/javascript">
 
 
-let namaProduk = "Canon EF 24-105mm F/3.5-5.6 IS STM";
-let hargaCash = 6890000;
+let namaProduk = "Canon IXUS 185";
+let hargaCash = 1335000;
 let cashBack = 0;
 let freeBawaan = 0;
 let freeClaim = 0;
@@ -69,10 +63,20 @@ let hargaCB = hargaCash - cashBack;
 let hargaHci = hargaCB;
 let bunga69 = 2.29; // BUNGA TENOR 9 BULAN 
 let bunga1224 = 3.69; // BUNGA TENOR 12, 15, 18 & 24 BULAN
-let bungaAdmin = 6.5; // BIAYA ADMIN PROMO LOKAL 0% 
+let bungaAdmin = 6.5; // BIAYA ADMIN PROMO LOKAL 0%
 
 
 let bunga4bulan = 2; // BIAYA SUBSIDI ADMIN PROMO LOKAL 4 BULAN 0% // TEMPORARY
+  
+  let n = namaProduk.includes("Canon");
+  if( n == true){
+    hargaHci = hargaCB + 150000;
+    
+  }
+  else {
+    hargaCB;
+  }
+
 
 
 
@@ -93,7 +97,7 @@ document.getElementById("nama-produk").innerHTML = namaProduk;
 document.getElementById("hargaNormal").innerHTML = hargaCBShowTime;
 document.getElementById("hargaHciNormal").innerHTML = hargaHciShowTime;
 
-var biayaAdm60P = hargaCB * bungaAdmin /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
+var biayaAdm60P = hargaCB *bungaAdmin /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
 var hargaTerbaru60P = hargaCB + biayaAdm60P; //harga terbaru setelah ditambah 5.5% admin
 var hargaTerbaru60PLipat = Math.ceil(hargaTerbaru60P/100)*100;
 let hargaTerbaru60PShowTime = hargaTerbaru60PLipat.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
@@ -119,7 +123,7 @@ document.getElementById("hargaHci4Bulan").innerHTML = hargaTerbaru40PShowTime;
    var Dp = 0 ; // mengkonversikan 10% dari harga asli ditambah biaya adm 200rb
 
    var BungaDp0_9 = (hargaHci * bunga69 / 100); // Bunga dari tenor 9 Bulan
-   var BungaDp0_N = (hargaHci * bunga1224 / 100); // Bunga dari tenor 12 sampai 24 Bulan
+   var BungaDp0_N = (hargaHci *bunga1224 / 100); // Bunga dari tenor 12 sampai 24 Bulan
    var Admin = 5000;
 
    var cicilan9_0 = (hargaHci / 9) + BungaDp0_9 + Admin;
@@ -153,8 +157,8 @@ document.getElementById("hargaHci4Bulan").innerHTML = hargaTerbaru40PShowTime;
       var DpBulatShowTime = DpBulat.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
       var DpSesungguhnya = DpBulat - 199000;
       var HargaSesungguhnya = hargaHci - DpSesungguhnya;
-      var BungaNormal = (HargaSesungguhnya * bunga1224 / 100); // Tenor Normal Seharusnya harga asli
-      var Bunga9Bulan = (HargaSesungguhnya * bunga69/100);  // Tenor 9 Bulan ,Seharusnya harga asli
+      var BungaNormal = (HargaSesungguhnya * bunga1224 / 100); // Seharusnya harga asli
+      var Bunga9Bulan = (HargaSesungguhnya *  bunga69 /100);  // Seharusnya harga asli
       var Admin = 5000;
       var cicilan9 = (HargaSesungguhnya / 9) + Bunga9Bulan + Admin;
       var cicilan12 = (HargaSesungguhnya / 12) + BungaNormal + Admin;
@@ -180,19 +184,14 @@ document.getElementById("hargaHci4Bulan").innerHTML = hargaTerbaru40PShowTime;
 
 var biayaAdm60P = hargaCB * bungaAdmin /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
 var hargaTerbaru60P = hargaCB + biayaAdm60P; //harga terbaru setelah ditambah 5.5% admin
-
 var hargaBulat60P = Math.ceil(hargaTerbaru60P / 100) * 100; //membulatkan kelipatan 100 perak
 var hargaBulat60PShowTime = hargaBulat60P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
-
-
 var DpMentah60P = (hargaBulat60P *10 /100) + 200000; // mengkonversikan 10% dari harga asli
 var DpTerbaru60P = Math.ceil(DpMentah60P / 50000) * 50000; //membulatkan kelipatan 50rb
 var DpTerbaru60PShowTime = DpTerbaru60P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-
 var DpSesungguhnya60P = DpTerbaru60P - 199000;
 var HargaSesungguhnya60P = hargaBulat60P - DpSesungguhnya60P;
 //var Bunga6099 = (hargaBulat6099 *2.69 / 100);
-
 var cicilan60P = (HargaSesungguhnya60P / 6  ) + Admin ;
 var mathcicilan60P = Math.ceil(cicilan60P/100)*100;
 var cicilan60Pasli = mathcicilan60P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
@@ -200,27 +199,22 @@ var cicilan60Pasli = mathcicilan60P.toLocaleString(undefined,{minimumFractionDig
 //Cicilan Tenor 6 Bulan Bunga 0%
 
 
-//Cicilan Tenor 4 Bulan Bunga 0% // TEMPORARY // MAY DELETE LATER
 
+//Cicilan Tenor 4 Bulan BUnga 0% // TEMPORARY // MAY DELETE LATER //
 var biayaAdm40P = hargaCB * bunga4bulan /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
 var hargaTerbaru40P = hargaCB + biayaAdm40P; //harga terbaru setelah ditambah 5.5% admin
-
 var hargaBulat40P = Math.ceil(hargaTerbaru40P / 100) * 100; //membulatkan kelipatan 100 perak
 var hargaBulat40PShowTime = hargaBulat40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
-
 var DpMentah40P = (hargaBulat40P *15 /100) + 200000; // mengkonversikan 10% dari harga asli
 var DpTerbaru40P = Math.ceil(DpMentah40P / 50000) * 50000; //membulatkan kelipatan 50rb
 var DpTerbaru40PShowTime = DpTerbaru40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-
 var DpSesungguhnya40P = DpTerbaru40P - 199000;
 var HargaSesungguhnya40P = hargaBulat40P - DpSesungguhnya40P;
 
 var cicilan40P = (HargaSesungguhnya40P / 4  ) + Admin ;
 var mathcicilan40P = Math.ceil(cicilan40P/100)*100;
 var cicilan40Pasli = mathcicilan40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-
-//Cicilan Tenor 4 Bulan Bunga 0% // TEMPORARY // MAY DELETE LATER
-
+//Cicilan Tenor 4 Bulan BUnga 0% // TEMPORARY // MAY DELETE LATER //
 
 
 if(cashBack == 0 && freeBawaan == 0 && freeClaim == 0){
@@ -246,11 +240,10 @@ namaProduk + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
 
-+ "<br>"  // TEMPORARY LINE  
++ "<br>"  // TEMPORARY LINE       
 + "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
 + "DP : " + DpTerbaru40PShowTime + "<br>" // TEMPORARY LINE
 + "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
-
   + garansi + "<br>"
   + periode ;
 }
@@ -316,7 +309,6 @@ namaProduk + "<br>"
 + "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
 + "DP : " + DpTerbaru40PShowTime + "<br>" // TEMPORARY LINE
 + "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
-
    + garansi + "<br>"
   + periode ;
 }
@@ -377,13 +369,13 @@ namaProduk + "<br>"
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
+  + "Free : " + freeBawaan + "<br>"
 
 + "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
+  + "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
 + "DP : " + DpTerbaru40PShowTime + "<br>" // TEMPORARY LINE
 + "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
 
-  + "Free : " + freeBawaan + "<br>"
    + garansi + "<br>"
   + periode ;
 }
@@ -515,7 +507,7 @@ else {
       var DpSesungguhnya = DpBulat - 199000;
       var HargaSesungguhnya = hargaHci - DpSesungguhnya;
       var BungaNormal = (HargaSesungguhnya * bunga1224 / 100); // Seharusnya harga asli
-      var Bunga9Bulan = (HargaSesungguhnya * bunga69 /100);  // Seharusnya harga asli
+      var Bunga9Bulan = (HargaSesungguhnya *  bunga69 /100);  // Seharusnya harga asli
       var Admin = 5000;
       var cicilan9 = (HargaSesungguhnya / 9) + Bunga9Bulan + Admin;
       var cicilan12 = (HargaSesungguhnya / 12) + BungaNormal + Admin;
@@ -546,6 +538,7 @@ var hargaTerbaru60P = hargaCB + biayaAdm60P; //harga terbaru setelah ditambah 4%
 // Problem dikolom ini
 var hargaBulat60P = Math.ceil(hargaTerbaru60P / 100) * 100; //membulatkan kelipatan 100 perak
 var hargaBulat60PShowTime = hargaBulat60P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
+console.log(hargaTerbaru60P);
 
 var hargaTerbaru60PP = hargaBulat60P ; //untuk mengecek bahwa setelah ditambah 5.5% apakah masih dibawah 15jt jika diatas 15jt maka berjalan rumus IF dibawah
 
@@ -558,6 +551,7 @@ else {
 }
 
 var DpTerbaru60P = Math.ceil(DpMentah60P / 50000) * 50000; //membulatkan kelipatan 50rb
+
 var DpTerbaru60PShowTime = DpTerbaru60P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
 var DpSesungguhnya60P = DpTerbaru60P - 199000;
 var HargaSesungguhnya60P = hargaTerbaru60PP - DpSesungguhnya60P;
@@ -569,8 +563,6 @@ var cicilan60Pasli = mathcicilan60P.toLocaleString(undefined,{minimumFractionDig
 
 
 
-
-
 //Cicilan Tenor 4 Bulan Bunga 0% // TEMPORARY // MAY DELETE LATER
 var biayaAdm40P = hargaCB * bunga4bulan /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
 var hargaTerbaru40P = hargaCB + biayaAdm40P; //harga terbaru setelah ditambah 4% admin
@@ -578,6 +570,7 @@ var hargaTerbaru40P = hargaCB + biayaAdm40P; //harga terbaru setelah ditambah 4%
 // Problem dikolom ini
 var hargaBulat40P = Math.ceil(hargaTerbaru40P / 100) * 100; //membulatkan kelipatan 100 perak
 var hargaBulat40PShowTime = hargaBulat40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
+console.log(hargaTerbaru40P);
 
 var hargaTerbaru40PP = hargaBulat40P ; //untuk mengecek bahwa setelah ditambah 5.5% apakah masih dibawah 15jt jika diatas 15jt maka berjalan rumus IF dibawah
 
@@ -590,6 +583,7 @@ else {
 }
 
 var DpTerbaru40P = Math.ceil(DpMentah40P / 50000) * 50000; //membulatkan kelipatan 50rb
+
 var DpTerbaru40PShowTime = DpTerbaru40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
 var DpSesungguhnya40P = DpTerbaru40P - 199000;
 var HargaSesungguhnya40P = hargaTerbaru40PP - DpSesungguhnya40P;
@@ -598,7 +592,6 @@ var cicilan40P = (HargaSesungguhnya40P / 4  ) + Admin ;
 var mathcicilan40P = Math.ceil(cicilan40P/100)*100;
 var cicilan40Pasli = mathcicilan40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
 //Cicilan Tenor 4 Bulan Bunga 0% // TEMPORARY // MAY DELETE LATER
-
 
 
 
@@ -644,7 +637,6 @@ namaProduk + "<br>"
 + "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
 + "DP : " + DpTerbaru40PShowTime + "<br>" // TEMPORARY LINE
 + "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
-
   + "Free : " + freeBawaan + "<br>"
    + garansi + "<br>"
   + periode ;
@@ -840,7 +832,7 @@ else if (hargaHci >15000000){
   var DpSesungguhnya = DpBulat - 199000;
   var HargaSesungguhnya = hargaHci - DpSesungguhnya;
   var BungaNormal = (HargaSesungguhnya * bunga1224 / 100);
-  var Bunga9Bulan = (HargaSesungguhnya * bunga69 /100);
+  var Bunga9Bulan = (HargaSesungguhnya *  bunga69 /100);
   var Admin = 5000;
   var cicilan9 = (HargaSesungguhnya / 9) + Bunga9Bulan + Admin;
   var cicilan12 = (HargaSesungguhnya / 12) + BungaNormal + Admin;
@@ -884,9 +876,10 @@ var cicilan60Pasli = mathcicilan60P.toLocaleString(undefined,{minimumFractionDig
 //Cicilan Tenor 6 Bulan Bunga 0%
 
 
-//Cicilan Tenor 4 Bulan Bunga 0% //TEMPORARY // MAY DELETE LATER
+//Cicilan Tenor 4 Bulan Bunga 0% // TEMPORARY // MAY DELETE LATER //
 var biayaAdm40P = hargaCB * bunga4bulan /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
 var hargaTerbaru40P = hargaCB + biayaAdm40P; //harga terbaru setelah ditambah 4% admin
+
 var hargaBulat40P = Math.ceil(hargaTerbaru40P / 100) * 100; //membulatkan kelipatan 50rb
 var hargaBulat40PShowTime = hargaBulat40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
 
@@ -894,6 +887,7 @@ var hargaMentah40P = (hargaBulat40P - 15000000) ; //15jt adalah batas maksimal k
 var DpRecomend40P = hargaMentah40P + 2450000;
 
 var DpBulat40P = Math.ceil(DpRecomend40P / 50000) * 50000; //membulatkan kelipatan 50rb
+
 var DpBulat40PShowTime = DpBulat40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
 
 var DpSesungguhnya40P = DpBulat40P - 199000;
@@ -903,9 +897,9 @@ var cicilan40P = (HargaSesungguhnya40P / 4 ) + Admin;
 var mathcicilan40P = Math.ceil(cicilan40P/100)*100;
 var cicilan40Pasli = mathcicilan40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
 
-//Cicilan Tenor 4 Bulan Bunga 0% //TEMPORARY // MAY DELETE LATER
+//Cicilan Tenor 4 Bulan Bunga 0% // TEMPORARY // MAY DELETE LATER //
 
-
+console.log(DpBulat40PShowTime)
 
 if(cashBack == 0 && freeBawaan == 0 && freeClaim == 0){
   document.getElementById("hasilcicilan").innerHTML =
