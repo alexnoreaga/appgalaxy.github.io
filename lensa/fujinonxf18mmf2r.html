@@ -25,13 +25,7 @@
     <p class="hasil" id="hargaHci6Bulan"></p>
   </div>
 
-    <!--- TEMPORARY ---->
-  <div class="box-title">
-    <p class="title">Harga HCI Khusus Tenor 4 Bulan Bunga 0%</p>
-    <p class="hasil" id="hargaHci4Bulan"></p>
-  </div>
 
-  <!-------------------->
 <div class="hasil-2">	
 <p id="hasilcicilan">Produk tidak dapat di kredit karena dibawah 1.5jt</p>
 <button class="tombol" onclick="copyDivToClipBoard()">Copy Angsuran</button>
@@ -59,20 +53,17 @@
 
 let namaProduk = "Fujinon XF18mm F/2 R";
 let hargaCash = 5520000;
-let cashBack = 1000000;
+let cashBack = 0;
 let freeBawaan = 0;
 let freeClaim = 0;
 let garansi = "Garansi Resmi 1 Tahun Fujifilm Indonesia";
 let batasClaim = 0;
-let periode = "Periode 1 - 30 Juni 2019";
+let periode = " ";
 let hargaCB = hargaCash - cashBack;
 let hargaHci = hargaCB;
 let bunga69 = 2.29; // BUNGA TENOR 9 BULAN 
-let bunga1224 = 3.69; // BUNGA TENOR 12, 15, 18 & 24 BULAN
+let bunga1224 = 2.69; // BUNGA TENOR 12, 15, 18 & 24 BULAN
 let bungaAdmin = 6.5; // BIAYA ADMIN PROMO LOKAL 0% 
-
-
-let bunga4bulan = 2; // BIAYA SUBSIDI ADMIN PROMO LOKAL 4 BULAN 0% // TEMPORARY
 
 
 
@@ -99,14 +90,6 @@ var hargaTerbaru60PLipat = Math.ceil(hargaTerbaru60P/100)*100;
 let hargaTerbaru60PShowTime = hargaTerbaru60PLipat.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
 document.getElementById("hargaHci6Bulan").innerHTML = hargaTerbaru60PShowTime;
 
-
-/////TEMPORARY////////////////// MAY DELETE LATER ///
-var biayaAdm40P = hargaCB *bunga4bulan /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
-var hargaTerbaru40P = hargaCB + biayaAdm40P; //harga terbaru setelah ditambah 5.5% admin
-var hargaTerbaru40PLipat = Math.ceil(hargaTerbaru40P/100)*100;
-let hargaTerbaru40PShowTime = hargaTerbaru40PLipat.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
-document.getElementById("hargaHci4Bulan").innerHTML = hargaTerbaru40PShowTime;
-///////TEMPORARY ENDING /////// MAY DELETE LATER ///
 
 
 
@@ -200,26 +183,7 @@ var cicilan60Pasli = mathcicilan60P.toLocaleString(undefined,{minimumFractionDig
 //Cicilan Tenor 6 Bulan Bunga 0%
 
 
-//Cicilan Tenor 4 Bulan Bunga 0% // TEMPORARY // MAY DELETE LATER
 
-var biayaAdm40P = hargaCB * bunga4bulan /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
-var hargaTerbaru40P = hargaCB + biayaAdm40P; //harga terbaru setelah ditambah 5.5% admin
-
-var hargaBulat40P = Math.ceil(hargaTerbaru40P / 100) * 100; //membulatkan kelipatan 100 perak
-var hargaBulat40PShowTime = hargaBulat40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
-
-var DpMentah40P = (hargaBulat40P *15 /100) + 200000; // mengkonversikan 10% dari harga asli
-var DpTerbaru40P = Math.ceil(DpMentah40P / 50000) * 50000; //membulatkan kelipatan 50rb
-var DpTerbaru40PShowTime = DpTerbaru40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-
-var DpSesungguhnya40P = DpTerbaru40P - 199000;
-var HargaSesungguhnya40P = hargaBulat40P - DpSesungguhnya40P;
-
-var cicilan40P = (HargaSesungguhnya40P / 4  ) + Admin ;
-var mathcicilan40P = Math.ceil(cicilan40P/100)*100;
-var cicilan40Pasli = mathcicilan40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-
-//Cicilan Tenor 4 Bulan Bunga 0% // TEMPORARY // MAY DELETE LATER
 
 
 
@@ -245,11 +209,6 @@ namaProduk + "<br>"
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
-
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpTerbaru40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
 
   + garansi + "<br>"
   + periode ;
@@ -277,10 +236,6 @@ namaProduk + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
 
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpTerbaru40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
 
   + "Free : " + freeBawaan + "<br>"
    + garansi + "<br>"
@@ -312,11 +267,6 @@ namaProduk + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
 
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpTerbaru40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
-
    + garansi + "<br>"
   + periode ;
 }
@@ -343,11 +293,6 @@ namaProduk + "<br>"
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
-
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpTerbaru40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
 
   + "Free Claim : " + freeClaim + "<br>"
   + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
@@ -378,11 +323,6 @@ namaProduk + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
 
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpTerbaru40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
-
   + "Free : " + freeBawaan + "<br>"
    + garansi + "<br>"
   + periode ;
@@ -410,11 +350,6 @@ namaProduk + "<br>"
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
-
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpTerbaru40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
 
   + "Free Claim : " + freeClaim + "<br>"
   + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
@@ -445,10 +380,6 @@ namaProduk + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
 
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpTerbaru40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
 
   + "Free : " + freeBawaan + "<br>"
   + "Free Claim : " + freeClaim + "<br>"
@@ -480,10 +411,6 @@ namaProduk + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
 
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpTerbaru40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
 
   + "Free : " + freeBawaan + "<br>"
   + "Free Claim : " + freeClaim + "<br>"
@@ -571,33 +498,7 @@ var cicilan60Pasli = mathcicilan60P.toLocaleString(undefined,{minimumFractionDig
 
 
 
-//Cicilan Tenor 4 Bulan Bunga 0% // TEMPORARY // MAY DELETE LATER
-var biayaAdm40P = hargaCB * bunga4bulan /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
-var hargaTerbaru40P = hargaCB + biayaAdm40P; //harga terbaru setelah ditambah 4% admin
 
-// Problem dikolom ini
-var hargaBulat40P = Math.ceil(hargaTerbaru40P / 100) * 100; //membulatkan kelipatan 100 perak
-var hargaBulat40PShowTime = hargaBulat40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-
-var hargaTerbaru40PP = hargaBulat40P ; //untuk mengecek bahwa setelah ditambah 5.5% apakah masih dibawah 15jt jika diatas 15jt maka berjalan rumus IF dibawah
-
-if (hargaTerbaru40PP > 15000000){
-  DpMentah40P = (hargaTerbaru40PP + 1700000) - 15000000;
-}
-else {
-  DpMentah40P = (hargaBulat40P *15 /100) + 200000;
-
-}
-
-var DpTerbaru40P = Math.ceil(DpMentah40P / 50000) * 50000; //membulatkan kelipatan 50rb
-var DpTerbaru40PShowTime = DpTerbaru40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-var DpSesungguhnya40P = DpTerbaru40P - 199000;
-var HargaSesungguhnya40P = hargaTerbaru40PP - DpSesungguhnya40P;
-
-var cicilan40P = (HargaSesungguhnya40P / 4  ) + Admin ;
-var mathcicilan40P = Math.ceil(cicilan40P/100)*100;
-var cicilan40Pasli = mathcicilan40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-//Cicilan Tenor 4 Bulan Bunga 0% // TEMPORARY // MAY DELETE LATER
 
 
 
@@ -617,11 +518,6 @@ namaProduk + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
 
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpTerbaru40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
-
   + garansi + "<br>"
   + periode ;
 }
@@ -639,11 +535,6 @@ namaProduk + "<br>"
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
-
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpTerbaru40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
 
   + "Free : " + freeBawaan + "<br>"
    + garansi + "<br>"
@@ -667,11 +558,6 @@ namaProduk + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
 
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpTerbaru40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
-
    + garansi + "<br>"
   + periode ;
 }
@@ -690,11 +576,6 @@ namaProduk + "<br>"
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
-
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpTerbaru40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
 
   + "Free Claim : " + freeClaim + "<br>"
   + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
@@ -717,11 +598,6 @@ namaProduk + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
 
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpTerbaru40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
-
   + "Free : " + freeBawaan + "<br>"
    + garansi + "<br>"
   + periode ;
@@ -741,11 +617,6 @@ namaProduk + "<br>"
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
-
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpTerbaru40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
 
   + "Free Claim : " + freeClaim + "<br>"
   + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
@@ -768,10 +639,6 @@ namaProduk + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
 
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpTerbaru40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
 
   + "Free : " + freeBawaan + "<br>"
   + "Free Claim : " + freeClaim + "<br>"
@@ -795,10 +662,6 @@ namaProduk + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
 
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpTerbaru40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
 
   + "Free : " + freeBawaan + "<br>"
   + "Free Claim : " + freeClaim + "<br>"
@@ -884,26 +747,6 @@ var cicilan60Pasli = mathcicilan60P.toLocaleString(undefined,{minimumFractionDig
 //Cicilan Tenor 6 Bulan Bunga 0%
 
 
-//Cicilan Tenor 4 Bulan Bunga 0% //TEMPORARY // MAY DELETE LATER
-var biayaAdm40P = hargaCB * bunga4bulan /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
-var hargaTerbaru40P = hargaCB + biayaAdm40P; //harga terbaru setelah ditambah 4% admin
-var hargaBulat40P = Math.ceil(hargaTerbaru40P / 100) * 100; //membulatkan kelipatan 50rb
-var hargaBulat40PShowTime = hargaBulat40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-
-var hargaMentah40P = (hargaBulat40P - 15000000) ; //15jt adalah batas maksimal kredit di HCI
-var DpRecomend40P = hargaMentah40P + 2450000;
-
-var DpBulat40P = Math.ceil(DpRecomend40P / 50000) * 50000; //membulatkan kelipatan 50rb
-var DpBulat40PShowTime = DpBulat40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-
-var DpSesungguhnya40P = DpBulat40P - 199000;
-var HargaSesungguhnya40P = hargaBulat40P - DpSesungguhnya40P;
-var Admin = 5000;
-var cicilan40P = (HargaSesungguhnya40P / 4 ) + Admin;
-var mathcicilan40P = Math.ceil(cicilan40P/100)*100;
-var cicilan40Pasli = mathcicilan40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-
-//Cicilan Tenor 4 Bulan Bunga 0% //TEMPORARY // MAY DELETE LATER
 
 
 
@@ -921,11 +764,6 @@ namaProduk + "<br>"
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpBulat60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
-
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpBulat40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
 
 + garansi + "<br>"
 + periode ;
@@ -945,11 +783,6 @@ namaProduk + "<br>"
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpBulat60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
-
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpBulat40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
 
   + "Free : " + freeBawaan + "<br>"
    + garansi + "<br>"
@@ -973,11 +806,6 @@ namaProduk + "<br>"
 + "DP : " + DpBulat60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
 
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpBulat40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
-
    + garansi + "<br>"
   + periode ;
 }
@@ -996,11 +824,6 @@ namaProduk + "<br>"
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpBulat60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
-
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpBulat40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
 
   + "Free Claim : " + freeClaim + "<br>"
   + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
@@ -1023,11 +846,6 @@ namaProduk + "<br>"
 + "DP : " + DpBulat60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
 
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpBulat40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
-
   + "Free : " + freeBawaan + "<br>"
    + garansi + "<br>"
   + periode ;
@@ -1047,11 +865,6 @@ namaProduk + "<br>"
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpBulat60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
-
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpBulat40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
 
   + "Free Claim : " + freeClaim + "<br>"
   + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
@@ -1074,11 +887,6 @@ namaProduk + "<br>"
 + "DP : " + DpBulat60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
 
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpBulat40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
-
   + "Free : " + freeBawaan + "<br>"
   + "Free Claim : " + freeClaim + "<br>"
   + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
@@ -1100,11 +908,6 @@ namaProduk + "<br>"
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpBulat60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
-
-+ "<br>"  // TEMPORARY LINE  
-+ "Spesial Promo Cicilan 4 Bulan" + "<br>" // TEMPORARY LINE
-+ "DP : " + DpBulat40PShowTime + "<br>" // TEMPORARY LINE
-+ "4x : " + cicilan40Pasli + "<br>" // TEMPORARY LINE
 
   + "Free : " + freeBawaan + "<br>"
   + "Free Claim : " + freeClaim + "<br>"
