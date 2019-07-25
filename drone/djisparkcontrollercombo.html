@@ -61,8 +61,8 @@ let batasClaim = 0;
 let periode = " ";
 let hargaCB = hargaCash - cashBack;
 let hargaHci = hargaCB;
-let bunga69 = 2.29; // BUNGA TENOR 9 BULAN 
-let bunga1224 = 2.69; // BUNGA TENOR 12, 15, 18 & 24 BULAN
+let bunga69 = 2.69; // BUNGA TENOR 9 BULAN 
+let bunga1224 = 3.29; // BUNGA TENOR 12, 15, 18 & 24 BULAN
 let bungaAdmin = 6.5; // BIAYA ADMIN PROMO LOKAL 0%
   
 
@@ -111,13 +111,13 @@ document.getElementById("hargaHci6Bulan").innerHTML = hargaTerbaru60PShowTime;
    var cicilan12_0 = (hargaHci / 12) + BungaDp0_N + Admin;
    var cicilan15_0 = (hargaHci / 15) + BungaDp0_N + Admin;
    var cicilan18_0 = (hargaHci / 18) + BungaDp0_N + Admin;
-   var cicilan24_0 = (hargaHci / 24) + BungaDp0_N + Admin;
+ 
 
    var mathcicilan9 = Math.ceil(cicilan9_0/100)*100; // Math.ceil untuk membulatkan menjadi kelipatan 100 rupiah
    var mathcicilan12 = Math.ceil(cicilan12_0/100)*100;
    var mathcicilan15 = Math.ceil(cicilan15_0/100)*100;
    var mathcicilan18 = Math.ceil(cicilan18_0/100)*100;
-   var mathcicilan24 = Math.ceil(cicilan24_0/100)*100;
+ 
 
    //toLocaleString untuk menambahkan koma disetiap 3 digit
    
@@ -125,7 +125,7 @@ document.getElementById("hargaHci6Bulan").innerHTML = hargaTerbaru60PShowTime;
    var cicilan12_0asli = mathcicilan12.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
    var cicilan15_0asli = mathcicilan15.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
    var cicilan18_0asli = mathcicilan18.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
-   var cicilan24_0asli = mathcicilan24.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
+
 
 
 
@@ -145,18 +145,18 @@ document.getElementById("hargaHci6Bulan").innerHTML = hargaTerbaru60PShowTime;
       var cicilan12 = (HargaSesungguhnya / 12) + BungaNormal + Admin;
       var cicilan15 = (HargaSesungguhnya / 15) + BungaNormal + Admin;
       var cicilan18 = (HargaSesungguhnya / 18) + BungaNormal + Admin;
-      var cicilan24 = (HargaSesungguhnya / 24) + BungaNormal + Admin;
+
       var mathcicilan9 = Math.ceil(cicilan9/100)*100; // Math.ceil untuk membulatkan menjadi kelipatan 100 rupiah
       var mathcicilan12 = Math.ceil(cicilan12/100)*100;
       var mathcicilan15 = Math.ceil(cicilan15/100)*100;
       var mathcicilan18 = Math.ceil(cicilan18/100)*100;
-      var mathcicilan24 = Math.ceil(cicilan24/100)*100;
+
       //toLocaleString untuk menambahkan koma disetiap 3 digit
       var cicilan9asli = mathcicilan9.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
       var cicilan12asli = mathcicilan12.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
       var cicilan15asli = mathcicilan15.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
       var cicilan18asli = mathcicilan18.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-      var cicilan24asli = mathcicilan24.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
+
 //Cicilan Tenor Normal
 
 
@@ -223,7 +223,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12_0asli + "<br>"
 + "15x : " + cicilan15_0asli + "<br>"
 + "18x : " + cicilan18_0asli + "<br>"
-+ "24x : " + cicilan24_0asli + "<br>"
 + "<br>"
 
 + "DP : " + DpBulatShowTime + "<br>"
@@ -231,7 +230,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
@@ -248,7 +246,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12_0asli + "<br>"
 + "15x : " + cicilan15_0asli + "<br>"
 + "18x : " + cicilan18_0asli + "<br>"
-+ "24x : " + cicilan24_0asli + "<br>"
 + "<br>"
 
 + "DP : " + DpBulatShowTime + "<br>"
@@ -256,7 +253,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
@@ -277,7 +273,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12_0asli + "<br>"
 + "15x : " + cicilan15_0asli + "<br>"
 + "18x : " + cicilan18_0asli + "<br>"
-+ "24x : " + cicilan24_0asli + "<br>"
 + "<br>"
 
 + "DP : " + DpBulatShowTime + "<br>"
@@ -285,7 +280,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
@@ -303,7 +297,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12_0asli + "<br>"
 + "15x : " + cicilan15_0asli + "<br>"
 + "18x : " + cicilan18_0asli + "<br>"
-+ "24x : " + cicilan24_0asli + "<br>"
 + "<br>"
 
 + "DP : " + DpBulatShowTime + "<br>"
@@ -311,7 +304,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
@@ -331,7 +323,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12_0asli + "<br>"
 + "15x : " + cicilan15_0asli + "<br>"
 + "18x : " + cicilan18_0asli + "<br>"
-+ "24x : " + cicilan24_0asli + "<br>"
 + "<br>"
 
 + "DP : " + DpBulatShowTime + "<br>"
@@ -339,7 +330,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
@@ -358,7 +348,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12_0asli + "<br>"
 + "15x : " + cicilan15_0asli + "<br>"
 + "18x : " + cicilan18_0asli + "<br>"
-+ "24x : " + cicilan24_0asli + "<br>"
 + "<br>"
 
 + "DP : " + DpBulatShowTime + "<br>"
@@ -366,7 +355,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
@@ -386,7 +374,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12_0asli + "<br>"
 + "15x : " + cicilan15_0asli + "<br>"
 + "18x : " + cicilan18_0asli + "<br>"
-+ "24x : " + cicilan24_0asli + "<br>"
 + "<br>"
 
 + "DP : " + DpBulatShowTime + "<br>"
@@ -394,7 +381,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
@@ -415,7 +401,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12_0asli + "<br>"
 + "15x : " + cicilan15_0asli + "<br>"
 + "18x : " + cicilan18_0asli + "<br>"
-+ "24x : " + cicilan24_0asli + "<br>"
 + "<br>"
 
 + "DP : " + DpBulatShowTime + "<br>"
@@ -423,7 +408,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
@@ -465,18 +449,17 @@ else {
       var cicilan12 = (HargaSesungguhnya / 12) + BungaNormal + Admin;
       var cicilan15 = (HargaSesungguhnya / 15) + BungaNormal + Admin;
       var cicilan18 = (HargaSesungguhnya / 18) + BungaNormal + Admin;
-      var cicilan24 = (HargaSesungguhnya / 24) + BungaNormal + Admin;
       var mathcicilan9 = Math.ceil(cicilan9/100)*100; // Math.ceil untuk membulatkan menjadi kelipatan 100 rupiah
       var mathcicilan12 = Math.ceil(cicilan12/100)*100;
       var mathcicilan15 = Math.ceil(cicilan15/100)*100;
       var mathcicilan18 = Math.ceil(cicilan18/100)*100;
-      var mathcicilan24 = Math.ceil(cicilan24/100)*100;
+
       //toLocaleString untuk menambahkan koma disetiap 3 digit
       var cicilan9asli = mathcicilan9.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
       var cicilan12asli = mathcicilan12.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
       var cicilan15asli = mathcicilan15.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
       var cicilan18asli = mathcicilan18.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-      var cicilan24asli = mathcicilan24.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
+
 ////////////////////Cicilan Tenor Normal ENDING//////////////////////////
 
 
@@ -529,7 +512,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
  + garansi + "<br>"
   + periode ;
@@ -542,7 +524,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
 + "Free : " + freeBawaan + "<br>"
 + garansi + "<br>"
@@ -559,7 +540,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
 + garansi + "<br>"
 + periode ;
@@ -573,7 +553,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
 + "Free Claim : " + freeClaim + "<br>"
 + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
@@ -589,7 +568,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
 + "Free : " + freeBawaan + "<br>"
 + garansi + "<br>"
@@ -604,7 +582,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
   + "Free Claim : " + freeClaim + "<br>"
   + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
@@ -620,7 +597,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
   + "Free : " + freeBawaan + "<br>"
   + "Free Claim : " + freeClaim + "<br>"
@@ -637,7 +613,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
   + "Free : " + freeBawaan + "<br>"
   + "Free Claim : " + freeClaim + "<br>"
@@ -685,18 +660,18 @@ else if (hargaHci >10000000){
   var cicilan12 = (HargaSesungguhnya / 12) + BungaNormal + Admin;
   var cicilan15 = (HargaSesungguhnya / 15) + BungaNormal + Admin;
   var cicilan18 = (HargaSesungguhnya / 18) + BungaNormal + Admin;
-  var cicilan24 = (HargaSesungguhnya / 24) + BungaNormal + Admin;
+
   var mathcicilan9 = Math.ceil(cicilan9/100)*100; // Math.ceil untuk membulatkan menjadi kelipatan 100 rupiah
   var mathcicilan12 = Math.ceil(cicilan12/100)*100;
   var mathcicilan15 = Math.ceil(cicilan15/100)*100;
   var mathcicilan18 = Math.ceil(cicilan18/100)*100;
-  var mathcicilan24 = Math.ceil(cicilan24/100)*100;
+
   //toLocaleString untuk menambahkan koma disetiap 3 digit
   var cicilan9asli = mathcicilan9.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
   var cicilan12asli = mathcicilan12.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
   var cicilan15asli = mathcicilan15.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
   var cicilan18asli = mathcicilan18.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-  var cicilan24asli = mathcicilan24.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
+
 //////////// TENOR NORMAL ENDING ///////////////////////////////////////////////
 
 
@@ -749,7 +724,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
 + garansi + "<br>"
 + periode ;
@@ -763,7 +737,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
   + "Free : " + freeBawaan + "<br>"
    + garansi + "<br>"
@@ -780,7 +753,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
    + garansi + "<br>"
   + periode ;
@@ -794,7 +766,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
   + "Free Claim : " + freeClaim + "<br>"
   + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
@@ -810,7 +781,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
   + "Free : " + freeBawaan + "<br>"
    + garansi + "<br>"
@@ -825,7 +795,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
   + "Free Claim : " + freeClaim + "<br>"
   + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
@@ -841,7 +810,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
   + "Free : " + freeBawaan + "<br>"
   + "Free Claim : " + freeClaim + "<br>"
@@ -858,7 +826,6 @@ namaProduk + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
   + "Free : " + freeBawaan + "<br>"
