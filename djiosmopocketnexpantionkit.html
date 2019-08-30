@@ -64,6 +64,9 @@ let hargaHci = hargaCB;
 let bunga69 = 2.29; // BUNGA TENOR 9 BULAN 
 let bunga1224 = 2.69; // BUNGA TENOR 12, 15, 18 & 24 BULAN
 let bungaAdmin = 6.5; // BIAYA SUBSIDI ADMIN PROMO LOKAL 0%
+
+
+
 // SEMENTARA SEMENTARA SEMENTARA
 let kalimat = "Spesial Promo Tenor 4 Bulan | 29 Agustus - 1 September 2019"
 let bungaAdmin4Bulan = 2; // BIAYA SUBSIDI ADMIN PROMO LOKAL 0%
@@ -926,7 +929,7 @@ var DpBulat40PShowTime = DpBulat40P.toLocaleString(undefined,{minimumFractionDig
 var DpSesungguhnya40P = DpBulat40P - 199000;
 var HargaSesungguhnya40P = hargaBulat40P - DpSesungguhnya40P;
 var Admin = 5000;
-var cicilan40P = (HargaSesungguhnya40P / 6 ) + Admin;
+var cicilan40P = (HargaSesungguhnya40P / 4 ) + Admin;
 var mathcicilan40P = Math.ceil(cicilan40P/100)*100;
 var cicilan40Pasli = mathcicilan40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
 
