@@ -27,13 +27,6 @@
     <p class="hasil" id="hargaHci6Bulan"></p>
   </div>
   
-<!-- Sementara --->
-  <div class="box-title">
-    <p class="title">Harga HCI Khusus Tenor 4 Bulan Bunga 0%</p>
-    <p class="hasil" id="hargaHci4Bulan"></p>
-  </div>
-<!-- Sementara --->
-
 <div class="hasil-2"> 
 <p id="hasilcicilan">Produk tidak dapat di kredit karena dibawah 1.5jt</p>
 <button class="tombol" onclick="copyDivToClipBoard()">Copy Angsuran</button>
@@ -58,7 +51,7 @@ let freeBawaan = 0;
 let freeClaim = 0;
 let garansi = "Garansi Resmi Panasonic 1 Tahun";
 let batasClaim = 0;
-let periode = "Periode 1 - 31 Agustus 2019";
+let periode = "Periode 1 - 30 September 2019";
 let hargaCB = hargaCash - cashBack;
 let hargaHci = hargaCB;
 let bunga69 = 2.29; // BUNGA TENOR 9 BULAN 
@@ -66,12 +59,7 @@ let bunga1224 = 2.69; // BUNGA TENOR 12, 15, 18 & 24 BULAN
 let bungaAdmin = 6.5; // BIAYA SUBSIDI ADMIN PROMO LOKAL 0%
 
 
-// SEMENTARA SEMENTARA SEMENTARA
-let kalimat = "Spesial Promo Tenor 4 Bulan | 29 Agustus - 1 September 2019"
-let bungaAdmin4Bulan = 2; // BIAYA SUBSIDI ADMIN PROMO LOKAL 0%
-// SEMENTARA SEMENTARA SEMENTARA
-
-  
+ 
   let n = namaProduk.includes("Canon");
   if( n == true){
     hargaHci = hargaCB + 150000;
@@ -106,16 +94,6 @@ var hargaTerbaru60P = hargaCB + biayaAdm60P; //harga terbaru setelah ditambah 5.
 var hargaTerbaru60PLipat = Math.ceil(hargaTerbaru60P/100)*100;
 let hargaTerbaru60PShowTime = hargaTerbaru60PLipat.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
 document.getElementById("hargaHci6Bulan").innerHTML = hargaTerbaru60PShowTime;
-
-
-
-// Sementara Sementara Sementara Sementara Sementara Sementara Sementara Sementara //
-var biayaAdm40P = hargaCB *bungaAdmin4Bulan /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
-var hargaTerbaru40P = hargaCB + biayaAdm40P; //harga terbaru setelah ditambah 2% admin
-var hargaTerbaru40PLipat = Math.ceil(hargaTerbaru40P/100)*100;
-let hargaTerbaru40PShowTime = hargaTerbaru40PLipat.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
-document.getElementById("hargaHci4Bulan").innerHTML = hargaTerbaru40PShowTime;
-// Sementara Sementara Sementara Sementara Sementara Sementara Sementara Sementara //
 
 
 
@@ -207,25 +185,6 @@ var cicilan60Pasli = mathcicilan60P.toLocaleString(undefined,{minimumFractionDig
 
 
 
-// Sementara Sementara Sementara Sementara Sementara Sementara Sementara Sementara //
-//Cicilan Tenor 4 Bulan Bunga 0%
-var biayaAdm40P = hargaCB * bungaAdmin4Bulan /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
-var hargaTerbaru40P = hargaCB + biayaAdm40P; //harga terbaru setelah ditambah 5.5% admin
-var hargaBulat40P = Math.ceil(hargaTerbaru40P / 100) * 100; //membulatkan kelipatan 100 perak
-var hargaBulat40PShowTime = hargaBulat40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
-var DpMentah40P = (hargaBulat40P *10 /100) + 200000; // mengkonversikan 10% dari harga asli
-var DpTerbaru40P = Math.ceil(DpMentah40P / 50000) * 50000; //membulatkan kelipatan 50rb
-var DpTerbaru40PShowTime = DpTerbaru40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-var DpSesungguhnya40P = DpTerbaru40P - 199000;
-var HargaSesungguhnya40P = hargaBulat40P - DpSesungguhnya40P;
-var cicilan40P = (HargaSesungguhnya40P / 4  ) + Admin ;
-var mathcicilan40P = Math.ceil(cicilan40P/100)*100;
-var cicilan40Pasli = mathcicilan40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-//Cicilan Tenor 4 Bulan Bunga 0%
-// Sementara Sementara Sementara Sementara Sementara Sementara Sementara Sementara //
-
-
-
 
 if(cashBack == 0 && freeBawaan == 0 && freeClaim == 0){
   document.getElementById("hasilcicilan").innerHTML =
@@ -245,13 +204,6 @@ namaProduk + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
-
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpTerbaru40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
@@ -277,13 +229,6 @@ namaProduk + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
-
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpTerbaru40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
@@ -314,13 +259,6 @@ namaProduk + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpTerbaru40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
-
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
@@ -346,13 +284,6 @@ namaProduk + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
-
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpTerbaru40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
@@ -382,12 +313,6 @@ namaProduk + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpTerbaru40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
@@ -416,12 +341,6 @@ namaProduk + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpTerbaru40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
@@ -451,12 +370,6 @@ namaProduk + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpTerbaru40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
@@ -487,13 +400,6 @@ namaProduk + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
-
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpTerbaru40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
@@ -581,35 +487,6 @@ var cicilan60Pasli = mathcicilan60P.toLocaleString(undefined,{minimumFractionDig
 //Cicilan Tenor 6 Bulan Bunga 0%
 
 
-// Sementara Sementara Sementara Sementara Sementara Sementara Sementara Sementara //
-//Cicilan Tenor 4 Bulan Bunga 0%
-var biayaAdm40P = hargaCB * bungaAdmin4Bulan /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
-var hargaTerbaru40P = hargaCB + biayaAdm40P; //harga terbaru setelah ditambah 2% admin
-// Problem dikolom ini
-var hargaBulat40P = Math.ceil(hargaTerbaru40P / 100) * 100; //membulatkan kelipatan 100 perak
-var hargaBulat40PShowTime = hargaBulat40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-var hargaTerbaru40PP = hargaBulat40P ; //untuk mengecek bahwa setelah ditambah 2% apakah masih dibawah 15jt jika diatas 15jt maka berjalan rumus IF dibawah
-
-if (hargaTerbaru40PP > 15000000){
-  DpMentah40P = (hargaTerbaru40PP + 1700000) - 15000000;
-}
-else {
-  DpMentah40P = (hargaBulat40P *10 /100) + 200000;
-
-}
-var DpTerbaru40P = Math.ceil(DpMentah40P / 50000) * 50000; //membulatkan kelipatan 50rb
-var DpTerbaru40PShowTime = DpTerbaru40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-var DpSesungguhnya40P = DpTerbaru40P - 199000;
-var HargaSesungguhnya40P = hargaTerbaru40PP - DpSesungguhnya40P;
-var cicilan40P = (HargaSesungguhnya40P / 4  ) + Admin ;
-var mathcicilan40P = Math.ceil(cicilan40P/100)*100;
-var cicilan40Pasli = mathcicilan40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-//Cicilan Tenor 4 Bulan Bunga 0%
-// Sementara Sementara Sementara Sementara Sementara Sementara Sementara Sementara //
-
-
-
-
 
 if(cashBack == 0 && freeBawaan == 0 && freeClaim == 0){
   document.getElementById("hasilcicilan").innerHTML =
@@ -621,13 +498,6 @@ namaProduk + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
-
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpTerbaru40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
@@ -647,13 +517,6 @@ namaProduk + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
-
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpTerbaru40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
@@ -677,13 +540,6 @@ namaProduk + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpTerbaru40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
-
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
@@ -702,13 +558,6 @@ namaProduk + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
-
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpTerbaru40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
@@ -732,13 +581,6 @@ namaProduk + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpTerbaru40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
-
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
@@ -758,13 +600,6 @@ namaProduk + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
-
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpTerbaru40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
@@ -788,13 +623,6 @@ namaProduk + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpTerbaru40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
-
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
@@ -817,12 +645,6 @@ namaProduk + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpTerbaru40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpTerbaru60PShowTime + "<br>"
@@ -912,30 +734,6 @@ var cicilan60Pasli = mathcicilan60P.toLocaleString(undefined,{minimumFractionDig
 //Cicilan Tenor 6 Bulan Bunga 0%
 
 
-// SEMENTARA SEMENTARA SEMENTARA SEMENTARA SEMENTARA SEMENTARA SEMENTARA SEMENTARA 
-//Cicilan Tenor 4 Bulan Bunga 0%
-var biayaAdm40P = hargaCB * bungaAdmin4Bulan /100; // mengkonversikan 10% dari harga asli ditambah biaya adm HCI 200rb
-var hargaTerbaru40P = hargaCB + biayaAdm40P; //harga terbaru setelah ditambah 4% admin
-var hargaBulat40P = Math.ceil(hargaTerbaru40P / 100) * 100; //membulatkan kelipatan 50rb
-var hargaBulat40PShowTime = hargaBulat40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-
-var hargaMentah40P = (hargaBulat40P - 15000000) ; //15jt adalah batas maksimal kredit di HCI
-var DpRecomend40P = hargaMentah40P + 1700000;
-
-var DpBulat40P = Math.ceil(DpRecomend40P / 50000) * 50000; //membulatkan kelipatan 50rb
-var DpBulat40PShowTime = DpBulat40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-
-var DpSesungguhnya40P = DpBulat40P - 199000;
-var HargaSesungguhnya40P = hargaBulat40P - DpSesungguhnya40P;
-var Admin = 5000;
-var cicilan40P = (HargaSesungguhnya40P / 4 ) + Admin;
-var mathcicilan40P = Math.ceil(cicilan40P/100)*100;
-var cicilan40Pasli = mathcicilan40P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
-
-//Cicilan Tenor 4 Bulan Bunga 0%
-// SEMENTARA SEMENTARA SEMENTARA SEMENTARA SEMENTARA SEMENTARA SEMENTARA SEMENTARA 
-
-
 
 
 if(cashBack == 0 && freeBawaan == 0 && freeClaim == 0){
@@ -948,13 +746,6 @@ namaProduk + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
-
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpBulat40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpBulat60PShowTime + "<br>"
@@ -976,12 +767,6 @@ namaProduk + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpBulat40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpBulat60PShowTime + "<br>"
@@ -1005,13 +790,6 @@ namaProduk + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpBulat40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
-
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpBulat60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
@@ -1030,13 +808,6 @@ namaProduk + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
-
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpBulat40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpBulat60PShowTime + "<br>"
@@ -1059,13 +830,6 @@ namaProduk + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpBulat40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
-
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpBulat60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
@@ -1085,13 +849,6 @@ namaProduk + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
-
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpBulat40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpBulat60PShowTime + "<br>"
@@ -1114,13 +871,6 @@ namaProduk + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
 
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpBulat40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
-
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpBulat60PShowTime + "<br>"
 + "6x : " + cicilan60Pasli + "<br>"
@@ -1142,13 +892,6 @@ namaProduk + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "24x : " + cicilan24asli + "<br>"
 + "<br>"
-
-//SEMENTARA SEMENTARA SEMENTARA
-+ kalimat + "<br>"
-+ "DP : " + DpBulat40PShowTime + "<br>"
-+ "4x : " + cicilan40Pasli + "<br>"
-+  "<br>"
-//SEMENTARA SEMENTARA SEMENTARA
 
 + "Spesial Promo Cicilan 6 Bulan" + "<br>"
 + "DP : " + DpBulat60PShowTime + "<br>"
