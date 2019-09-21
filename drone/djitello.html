@@ -132,7 +132,7 @@ document.getElementById("hargaHci6Bulan").innerHTML = hargaTerbaru60PShowTime;
 
 
 ////////////////////Cicilan DP Normal//////////////////////////
-      var Dp = (hargaHci *30 /100) + 200000; // mengkonversikan 10% dari harga asli ditambah biaya adm 200rb
+      var Dp = (hargaHci *20 /100) + 200000; // mengkonversikan 10% dari harga asli ditambah biaya adm 200rb
       var DpBulat = Math.ceil(Dp / 50000) * 50000; //membulatkan kelipatan 50rb
       // DpBulatShowTime hanya untuk tampil dihalaman depan dengan ada koma disetiap 3 digit 0
       var DpBulatShowTime = DpBulat.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
@@ -242,7 +242,6 @@ namaProduk + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "<br>"
 
-
   + "Free : " + freeBawaan + "<br>"
    + garansi + "<br>"
   + periode ;
@@ -262,7 +261,7 @@ namaProduk + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "<br>"
 
-   + garansi + "<br>"
+  + garansi + "<br>"
   + periode ;
 }
 
