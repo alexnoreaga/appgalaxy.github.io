@@ -2,18 +2,16 @@
 <html>
 <head>
   <title>List Harga</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body >
 
 
 <div class="container">
-
-  <div class="box-title">
+<div class="box-title">
     <p class="title">Nama Produk</p> 
     <p class="hasil-new" id="nama-produk"></p>
   </div>
-
   <div class="box-title">
     <p class="title">Harga Cash</p> 
     <p class="hasil" id="hargaNormal"></p>
@@ -28,7 +26,7 @@
   </div>
 
 
-<div class="hasil-2"> 
+<div class="hasil-2">	
 <p id="hasilcicilan">Produk tidak dapat di kredit karena dibawah 1.5jt</p>
 <button class="tombol" onclick="copyDivToClipBoard()">Copy Angsuran</button>
 
@@ -38,27 +36,34 @@
 </div>
 
 
-
+<footer>
+<div class="kaki">
+  <a href="javascript:history.go(-1)"><p class="menu">Back</p></a>
+  <a href="#"><p class="menu"></p></a>
+  <a href="#"><p class="menu"></p></a>
+  <a href="../index.html"><p class="menu">Home</p></a>
+</div>
+<div class="clr"></div>
+</footer>
 
 
 
 <script type="text/javascript">
 
 
-let namaProduk = "Sony A7 Mark II + FE50mm";
-let hargaCash = 19999000;
-let cashBack = 2000000;
+let namaProduk = "1 Nikkor 18.5mm F/1.8";
+let hargaCash = 3050000;
+let cashBack = 0;
 let freeBawaan = 0;
 let freeClaim = 0;
-let garansi = "Garansi Resmi 1 Tahun Sony Indonesia";
+let garansi = "Garansi Resmi 1 Tahun Alta Nikindo";
 let batasClaim = 0;
-let periode = "Periode 2 - 31 Desember 2019";
+let periode = " ";
 let hargaCB = hargaCash - cashBack;
 let hargaHci = hargaCB;
 let bunga69 = 2.29; // BUNGA TENOR 9 BULAN 
 let bunga1224 = 2.69; // BUNGA TENOR 12, 15, 18 & 24 BULAN
-let bungaAdmin = 7; // BIAYA SUBSIDI ADMIN PROMO LOKAL 0%
-
+let bungaAdmin = 7; // BIAYA ADMIN PROMO LOKAL 0% 
 
 
 
