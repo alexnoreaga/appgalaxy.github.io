@@ -99,32 +99,8 @@ document.getElementById("hargaHci6Bulan").innerHTML = hargaTerbaru60PShowTime;
 
 
 ////// Khusus Produk dibawah 4.5 juta START /////////////
- if(hargaHci <=4500000) {
+ if(hargaHci <=2000000 && hargaHci >= 1000000) {
 
-   var Dp = 0 ; // mengkonversikan 10% dari harga asli ditambah biaya adm 200rb
-
-   var BungaDp0_9 = (hargaHci * bunga69 / 100); // Bunga dari tenor 9 Bulan
-   var BungaDp0_N = (hargaHci * bunga1224 / 100); // Bunga dari tenor 12 sampai 24 Bulan
-   var Admin = 5000;
-
-   var cicilan9_0 = (hargaHci / 9) + BungaDp0_9 + Admin;
-   var cicilan12_0 = (hargaHci / 12) + BungaDp0_N + Admin;
-   var cicilan15_0 = (hargaHci / 15) + BungaDp0_N + Admin;
-   var cicilan18_0 = (hargaHci / 18) + BungaDp0_N + Admin;
- 
-
-   var mathcicilan9 = Math.ceil(cicilan9_0/100)*100; // Math.ceil untuk membulatkan menjadi kelipatan 100 rupiah
-   var mathcicilan12 = Math.ceil(cicilan12_0/100)*100;
-   var mathcicilan15 = Math.ceil(cicilan15_0/100)*100;
-   var mathcicilan18 = Math.ceil(cicilan18_0/100)*100;
- 
-
-   //toLocaleString untuk menambahkan koma disetiap 3 digit
-   
-   var cicilan9_0asli = mathcicilan9.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
-   var cicilan12_0asli = mathcicilan12.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
-   var cicilan15_0asli = mathcicilan15.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
-   var cicilan18_0asli = mathcicilan18.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
 
 
 
@@ -132,7 +108,7 @@ document.getElementById("hargaHci6Bulan").innerHTML = hargaTerbaru60PShowTime;
 
 
 ////////////////////Cicilan DP Normal//////////////////////////
-      var Dp = (hargaHci *20 /100) + 200000; // mengkonversikan 10% dari harga asli ditambah biaya adm 200rb
+      var Dp = (hargaHci *30 /100) + 50000; // mengkonversikan 10% dari harga asli ditambah biaya adm 200rb
       var DpBulat = Math.ceil(Dp / 50000) * 50000; //membulatkan kelipatan 50rb
       // DpBulatShowTime hanya untuk tampil dihalaman depan dengan ada koma disetiap 3 digit 0
       var DpBulatShowTime = DpBulat.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
@@ -187,64 +163,31 @@ var cicilan60Pasli = mathcicilan60P.toLocaleString(undefined,{minimumFractionDig
 //Cicilan Tenor 6 Bulan Bunga 0%
 
 
-/*
-document.getElementById("hasilcicilan").innerHTML =
-namaProduk + "<br>"
-+ "DP : 0 (Cukup bayar biaya admin 200rb)" + "<br>"
-+ "9x : " + cicilan9_0asli + "<br>"
-+ "12x : " + cicilan12_0asli + "<br>"
-+ "15x : " + cicilan15_0asli + "<br>"
-+ "18x : " + cicilan18_0asli + "<br>"
-+ "24x : " + cicilan24_0asli + "<br>"
-+ "<br>"
-
-+ "DP : " + DpBulatShowTime + "<br>"
-+ "9x : " + cicilan9asli + "<br>"
-+ "12x : " + cicilan12asli + "<br>"
-+ "15x : " + cicilan15asli + "<br>"
-+ "18x : " + cicilan18asli + "<br>"
-+ "24x : " + cicilan24asli + "<br>"
-+ "<br>"
-
-+ "Spesial Promo Cicilan 6 Bulan Bunga 0%" + "<br>"
-+ "DP : " + DpTerbaru60PShowTime + "<br>"
-+ "6x : " + cicilan60Pasli + "<br>"
-+ periode
-; //milik getElementById
-
-*/
-
 
 if(cashBack == 0 && freeBawaan == 0 && freeClaim == 0){
   document.getElementById("hasilcicilan").innerHTML =
 namaProduk + "<br>"
-
-
 + "DP : " + DpBulatShowTime + "<br>"
 + "9x : " + cicilan9asli + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "<br>"
-
-  + garansi + "<br>"
+ + garansi + "<br>"
   + periode ;
 }
 else if (cashBack == 0 && freeBawaan !== 0 && freeClaim == 0){
   document.getElementById("hasilcicilan").innerHTML =
 namaProduk + "<br>"
-
-
 + "DP : " + DpBulatShowTime + "<br>"
 + "9x : " + cicilan9asli + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "<br>"
-
-  + "Free : " + freeBawaan + "<br>"
-   + garansi + "<br>"
-  + periode ;
++ "Free : " + freeBawaan + "<br>"
++ garansi + "<br>"
++ periode ;
 }
 
 
@@ -252,66 +195,54 @@ namaProduk + "<br>"
 else if (cashBack !== 0 && freeBawaan == 0 && freeClaim == 0){
   document.getElementById("hasilcicilan").innerHTML =
 namaProduk + "<br>"
-
-
 + "DP : " + DpBulatShowTime + "<br>"
 + "9x : " + cicilan9asli + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "<br>"
-
-  + garansi + "<br>"
-  + periode ;
++ garansi + "<br>"
++ periode ;
 }
 
 else if (cashBack == 0 && freeBawaan == 0 && freeClaim !== 0){
   document.getElementById("hasilcicilan").innerHTML =
 namaProduk + "<br>"
-
-
 + "DP : " + DpBulatShowTime + "<br>"
 + "9x : " + cicilan9asli + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "<br>"
-
-  + "Free Claim : " + freeClaim + "<br>"
-  + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
-   + garansi + "<br>"
-  + periode ;
++ "Free Claim : " + freeClaim + "<br>"
++ "Batas klaim free sampai dengan " + batasClaim + "<br>" 
++ garansi + "<br>"
++ periode ;
 }
 
 else if (cashBack !== 0 && freeBawaan !== 0 && freeClaim == 0){
   document.getElementById("hasilcicilan").innerHTML =
 namaProduk + "<br>"
-
-
 + "DP : " + DpBulatShowTime + "<br>"
 + "9x : " + cicilan9asli + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "<br>"
-
-  + "Free : " + freeBawaan + "<br>"
-   + garansi + "<br>"
-  + periode ;
++ "Free : " + freeBawaan + "<br>"
++ garansi + "<br>"
++ periode ;
 }
 
 else if (cashBack !== 0 && freeBawaan == 0 && freeClaim !== 0){
   document.getElementById("hasilcicilan").innerHTML =
 namaProduk + "<br>"
-
-
 + "DP : " + DpBulatShowTime + "<br>"
 + "9x : " + cicilan9asli + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "<br>"
-
   + "Free Claim : " + freeClaim + "<br>"
   + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
    + garansi + "<br>"
@@ -321,15 +252,12 @@ namaProduk + "<br>"
 else if (cashBack !== 0 && freeBawaan !== 0 && freeClaim !== 0 ){
   document.getElementById("hasilcicilan").innerHTML =
 namaProduk + "<br>"
-
-
 + "DP : " + DpBulatShowTime + "<br>"
 + "9x : " + cicilan9asli + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "<br>"
-
   + "Free : " + freeBawaan + "<br>"
   + "Free Claim : " + freeClaim + "<br>"
   + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
@@ -340,21 +268,19 @@ namaProduk + "<br>"
 else if (cashBack == 0 && freeBawaan !== 0 && freeClaim !== 0 ){
   document.getElementById("hasilcicilan").innerHTML =
 namaProduk + "<br>"
-
-
 + "DP : " + DpBulatShowTime + "<br>"
 + "9x : " + cicilan9asli + "<br>"
 + "12x : " + cicilan12asli + "<br>"
 + "15x : " + cicilan15asli + "<br>"
 + "18x : " + cicilan18asli + "<br>"
 + "<br>"
-
   + "Free : " + freeBawaan + "<br>"
   + "Free Claim : " + freeClaim + "<br>"
   + "Batas klaim free sampai dengan " + batasClaim + "<br>" 
    + garansi + "<br>"
   + periode ;
 }
+
 
 
 
@@ -369,8 +295,8 @@ else {
 
 
 
-////// Khusus Produk dibawah 15 juta START ////////////
-  else if(hargaHci <= 10000000){
+////// Khusus Produk dibawah 14.3 juta START ////////////
+  else if(hargaHci <= 14300000 && hargaHci >= 2000000){
 
 ////////////////////Cicilan Tenor Normal//////////////////////////
       var Dp = (hargaHci *30 /100) + 200000; // mengkonversikan 10% dari harga asli ditambah biaya adm 200rb
@@ -579,11 +505,11 @@ else {
 
 
 ////// Khusus Produk diatas 10 juta START ////////////
-else if (hargaHci >10000000){
+else if (hargaHci >14300000){
 
   //////TENOR NORMAL START/////////////
   var hargaMentah = hargaHci - 10000000; //10jt adalah batas maksimal kredit di HCI
-  var DpRecomend = hargaMentah + 3200000; // 1.7jt ada lah 30% dari 10jt  + biaya admin 200rb
+  var DpRecomend = hargaMentah + 200000; // 1.7jt ada lah 30% dari 10jt  + biaya admin 200rb
 
   var DpBulat = Math.ceil(DpRecomend / 50000) * 50000; //membulatkan kelipatan 50rb
   var DpBulatShowTime = DpBulat.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})

@@ -69,6 +69,8 @@ let bungaAdmin = 6; // BIAYA ADMIN PROMO LOKAL 0%
 
 
 
+
+
 ///////////////////////////DARI SINI //////////////////////////////////////////////////////////////
 
 let hargaCashShowTime = hargaCash.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
@@ -422,7 +424,7 @@ else {
 
 
 ////// Khusus Produk dibawah 15 juta START ////////////
-  else if(hargaHci <= 15000000  && hargaHci >= 1500000){
+  else if(hargaHci <= 16700000  && hargaHci >= 1500000){
 
 ////////////////////Cicilan Tenor Normal//////////////////////////
       var Dp = (hargaHci *10 /100) + 200000; // mengkonversikan 10% dari harga asli ditambah biaya adm 200rb
@@ -463,8 +465,8 @@ var hargaBulat60P = Math.ceil(hargaTerbaru60P / 100) * 100; //membulatkan kelipa
 var hargaBulat60PShowTime = hargaBulat60P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
 var hargaTerbaru60PP = hargaBulat60P ; //untuk mengecek bahwa setelah ditambah 5.5% apakah masih dibawah 15jt jika diatas 15jt maka berjalan rumus IF dibawah
 
-if (hargaTerbaru60PP > 15000000){
-  DpMentah60P = (hargaTerbaru60PP + 1700000) - 15000000;
+if (hargaTerbaru60PP > 16700000){
+  DpMentah60P = (hargaTerbaru60PP - 15000000) + 200000;
 }
 else {
   DpMentah60P = (hargaBulat60P *10 /100) + 200000;
@@ -675,11 +677,11 @@ else {
 
 
 ////// Khusus Produk diatas 15 juta START ////////////
-else if (hargaHci >15000000){
+else if (hargaHci >16700000){
 
   //////TENOR NORMAL START/////////////
   var hargaMentah = hargaHci - 15000000; //15jt adalah batas maksimal kredit di HCI
-  var DpRecomend = hargaMentah + 1700000; // 1.7jt ada lah 10% dari 15jt (1.5jt) + biaya admin 200rb
+  var DpRecomend = hargaMentah + 200000; // 1.7jt ada lah 10% dari 15jt (1.5jt) + biaya admin 200rb
 
   var DpBulat = Math.ceil(DpRecomend / 50000) * 50000; //membulatkan kelipatan 50rb
   var DpBulatShowTime = DpBulat.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
@@ -715,7 +717,7 @@ var hargaBulat60P = Math.ceil(hargaTerbaru60P / 100) * 100; //membulatkan kelipa
 var hargaBulat60PShowTime = hargaBulat60P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
 
 var hargaMentah60P = (hargaBulat60P - 15000000) ; //15jt adalah batas maksimal kredit di HCI
-var DpRecomend60P = hargaMentah60P + 1700000;
+var DpRecomend60P = hargaMentah60P + 200000;
 
 var DpBulat60P = Math.ceil(DpRecomend60P / 50000) * 50000; //membulatkan kelipatan 50rb
 var DpBulat60PShowTime = DpBulat60P.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})
