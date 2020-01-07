@@ -235,5 +235,10 @@ color:#333333;
 }
 
 .spasi{
-	margin-bottom:100px;
+	margin-bottom:50px;
+}
+
+.spesifikasi{
+	padding:15px;
+	color:grey;
 }
