@@ -39,6 +39,19 @@
 </div>
 
 
+<!-- COPAS MULAI DARI SINI-->
+
+<p class="judul">Spesifikasi</p>
+<div class="spesifikasi" id="spesifikasi"></div>
+<button class="tombol" onclick="copySpekToClipBoard()">Copy Harga Cash</button>
+
+
+<p class="judul">Isi Box</p>
+<div class="spesifikasi" id="isibox"></div>
+<button class="tombol" onclick="copyIsiBoxToClipBoard()">Copy Isi Box</button>
+
+
+<!-- BATAS COPAS -->
 
 
 
@@ -61,6 +74,59 @@ let bunga1224 = 2.69; // BUNGA TENOR 12, 15, 18 & 24 BULAN
 let bungaAdmin = 6; // BIAYA SUBSIDI ADMIN PROMO LOKAL 0%
 
 
+
+////////////////////////////COPAS DARI BAWAH INI //////////////////////////////////////
+
+const spesifikasi = {
+   Produk : namaProduk,
+   Kategori : "XXXX",
+   Resolusi:"XXXX", 
+   Sensor : "XXXX", // Jenis Sensor
+   Touchscreen : "XXX", // Diisi Yes / No
+   Video : "XXXX", // Spesifikasi Video Tertinggi
+   Layar : "XXXX", // Tergantung Kamera (bisa Layar Fixed, atau Layar Flip 180 Derajat)
+   Timelapse : "XXXX",
+   Viewfinder : "XXX",
+   test :0, // JIka tidak perlu ditampilkan cukup diisi 0 sama seperti contoh disamping <<<
+   Microphone_Port :"XXX",  // Diisi Yes / No
+   Headphone_Port : "XXX", // Diisi Yes / No
+   Baterai : "XXX",
+   Charger : "XXX",
+   Daya_Baterai : "XXX" // Berapa x jepret
+   
+}
+
+
+
+for (const property in spesifikasi) {
+  if(`${spesifikasi[property]}` == 0) {continue;}
+  //console.log(`${property}: ${spesifikasi[property]}`)
+  document.getElementById('spesifikasi').innerHTML +=  `${property}` +" : " +`${spesifikasi[property]}` +"<br>";
+}
+
+
+const isibox = [
+  
+// Isi dibawah ini // menggunakan tanda petik contoh "Body Kamera", dan dikasih koma
+// kecuali yang terakhir/paling bawah tidak perlu dikasi tanda koma.
+// Contoh : 
+// "Body Kamera",
+// "Lensa Kit",
+//  "Kabel Data",
+// "Kartu Garansi",
+// "Buku Panduan"
+
+
+ // Isi diatas ini
+]
+
+
+for(let i = 0; i < isibox.length;i++){
+  console.log(isibox[i]);
+  document.getElementById('isibox').innerHTML += isibox[i] +"<br>";
+}
+
+///////////////////// SAMPAI DISINI //////////////////////////////////
 
 
 ///////////////////////////DARI SINI //////////////////////////////////////////////////////////////
