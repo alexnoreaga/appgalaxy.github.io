@@ -43,7 +43,7 @@
 
 <p class="judul">Spesifikasi</p>
 <div class="spesifikasi" id="spesifikasi"></div>
-<button class="tombol" onclick="copySpekToClipBoard()">Copy Harga Cash</button>
+<button class="tombol" onclick="copySpekToClipBoard()">Copy Spesifikasi</button>
 
 
 <p class="judul">Isi Box</p>
@@ -1095,6 +1095,32 @@ function copyCashToClipBoard(){
   //add to clipboard.
   document.execCommand('copy');
 }
+// COPAS MULAI DARI SINI /////////////////
+
+function copySpekToClipBoard(){
+  var text = document.getElementById("spesifikasi");
+  var selection = window.getSelection();
+  var range = document.createRange();
+  range.selectNodeContents(text);
+  selection.removeAllRanges();
+  selection.addRange(range);
+  //add to clipboard.
+  document.execCommand('copy');
+}
+
+function copyIsiBoxToClipBoard(){
+  var text = document.getElementById("isibox");
+  var selection = window.getSelection();
+  var range = document.createRange();
+  range.selectNodeContents(text);
+  selection.removeAllRanges();
+  selection.addRange(range);
+  //add to clipboard.
+  document.execCommand('copy');
+}
+
+
+// SAMPAI DISINI /////////////////////
 
 
 
