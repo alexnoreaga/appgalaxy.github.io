@@ -28,20 +28,33 @@
   </div>
 
 
-<div class="hasil-2"> 
-<p id="hasilcicilan">Produk tidak dapat di kredit karena dibawah 1.5jt</p>
-<button class="tombol" onclick="copyDivToClipBoard()">Copy Angsuran</button>
+  <div class="hasil-2"> 
+    <p id="hasilcicilan">Produk tidak dapat di kredit karena dibawah 1.5jt</p>
+    <button class="tombol" onclick="copyDivToClipBoard()">Copy Angsuran</button>
 
-<p id="final"></p>
-<button class="tombol" onclick="copyCashToClipBoard()">Copy Harga Cash</button>
+    <p id="final"></p>
+    <button class="tombol" onclick="copyCashToClipBoard()">Copy Harga Cash</button>
+  </div>
 </div>
-</div>
+
+<!-- COPAS MULAI DARI SINI-->
 
 <p class="judul">Spesifikasi</p>
 <div class="spesifikasi" id="spesifikasi"></div>
-<button class="tombol" onclick="copySpekToClipBoard()">Copy Harga Cash</button>
+<button class="tombol" onclick="copySpekToClipBoard()">Copy Spesifikasi</button>
+
+
+<p class="judul">Isi Box</p>
+<div class="spesifikasi" id="isibox"></div>
+<button class="tombol" onclick="copyIsiBoxToClipBoard()">Copy Isi Box</button>
+
+
+<!-- BATAS COPAS -->
+
 
 <script type="text/javascript">
+
+
 
 
 let namaProduk = "Canon EOS 200D Kit 18-55mm";
@@ -61,29 +74,24 @@ let bungaAdmin = 6; // BIAYA SUBSIDI ADMIN PROMO LOKAL 0%
 
 
 
-
+////////////////////////////COPAS DARI BAWAH INI //////////////////////////////////////
 
 const spesifikasi = {
    Produk : namaProduk,
-   Kategori : "Kamera Mirrorless",
-   Resolusi:"24 Megapixels", 
-   Sensor : "APS-C CMOS", // Jenis Sensor
-   Touchscreen : "Yes", // Diisi Yes / No
-   Video : "4K 30fps", // Spesifikasi Video Tertinggi
-   Layar : "Layar Flip 360 Derajat", // Tergantung Kamera (bisa Layar Fixed, atau Layar Flip 180 Derajat)
-   Timelapse : "Yes",
-   Viewfinder : "No",
+   Kategori : "XXXX",
+   Resolusi:"XXXX", 
+   Sensor : "XXXX", // Jenis Sensor
+   Touchscreen : "XXX", // Diisi Yes / No
+   Video : "XXXX", // Spesifikasi Video Tertinggi
+   Layar : "XXXX", // Tergantung Kamera (bisa Layar Fixed, atau Layar Flip 180 Derajat)
+   Timelapse : "XXXX",
+   Viewfinder : "XXX",
    test :0, // JIka tidak perlu ditampilkan cukup diisi 0 sama seperti contoh disamping <<<
-   Microphone_Port :"No",  // Diisi Yes / No
-   Headphone_Port : "No", // Diisi Yes / No
-   Baterai : "LP-E17",
-   Charger : "LC-E17",
-   Daya_Baterai : "295 shots" // Berapa x jepret
-
-
-
-
-
+   Microphone_Port :"XXX",  // Diisi Yes / No
+   Headphone_Port : "XXX", // Diisi Yes / No
+   Baterai : "XXX",
+   Charger : "XXX",
+   Daya_Baterai : "XXX" // Berapa x jepret
    
 }
 
@@ -91,12 +99,38 @@ const spesifikasi = {
 
 for (const property in spesifikasi) {
   if(`${spesifikasi[property]}` == 0) {continue;}
-  console.log(`${property}: ${spesifikasi[property]}`)
+  //console.log(`${property}: ${spesifikasi[property]}`)
   document.getElementById('spesifikasi').innerHTML +=  `${property}` +" : " +`${spesifikasi[property]}` +"<br>";
 }
 
 
-///////////////////////////DARI SINI //////////////////////////////////////////////////////////////
+const isibox = [
+  
+// Isi dibawah ini // menggunakan tanda petik contoh "Body Kamera", dan dikasih koma
+// kecuali yang terakhir/paling bawah tidak perlu dikasi tanda koma.
+// Contoh : 
+// "Body Kamera",
+// "Lensa Kit",
+//  "Kabel Data",
+// "Kartu Garansi",
+// "Buku Panduan"
+
+
+ // Isi diatas ini
+]
+
+
+for(let i = 0; i < isibox.length;i++){
+  console.log(isibox[i]);
+  document.getElementById('isibox').innerHTML += isibox[i] +"<br>";
+}
+
+///////////////////// SAMPAI DISINI //////////////////////////////////
+
+
+
+
+///////////////////////////DARI SINI //////////////////////////////////////////
 
 let hargaCashShowTime = hargaCash.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
 let cashBackShowTime = cashBack.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
@@ -1065,6 +1099,8 @@ function copyCashToClipBoard(){
   document.execCommand('copy');
 }
 
+// COPAS MULAI DARI SINI /////////////////
+
 function copySpekToClipBoard(){
   var text = document.getElementById("spesifikasi");
   var selection = window.getSelection();
@@ -1076,6 +1112,19 @@ function copySpekToClipBoard(){
   document.execCommand('copy');
 }
 
+function copyIsiBoxToClipBoard(){
+  var text = document.getElementById("isibox");
+  var selection = window.getSelection();
+  var range = document.createRange();
+  range.selectNodeContents(text);
+  selection.removeAllRanges();
+  selection.addRange(range);
+  //add to clipboard.
+  document.execCommand('copy');
+}
+
+
+// SAMPAI DISINI /////////////////////
 
 
 </script>
