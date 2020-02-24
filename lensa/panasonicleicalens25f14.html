@@ -2,18 +2,16 @@
 <html>
 <head>
   <title>List Harga</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body >
 
 
 <div class="container">
-
-  <div class="box-title">
+<div class="box-title">
     <p class="title">Nama Produk</p> 
     <p class="hasil-new" id="nama-produk"></p>
   </div>
-
   <div class="box-title">
     <p class="title">Harga Cash</p> 
     <p class="hasil" id="hargaNormal"></p>
@@ -28,7 +26,7 @@
   </div>
 
 
-<div class="hasil-2"> 
+<div class="hasil-2">	
 <p id="hasilcicilan">Produk tidak dapat di kredit karena dibawah 1.5jt</p>
 <button class="tombol" onclick="copyDivToClipBoard()">Copy Angsuran</button>
 
@@ -37,93 +35,36 @@
 </div>
 </div>
 
-<!-- COPAS MULAI DARI SINI-->
 
-<p class="judul">Spesifikasi</p>
-<div class="spesifikasi" id="spesifikasi"></div>
-<button class="tombol" onclick="copySpekToClipBoard()">Copy Spesifikasi</button>
-
-
-<p class="judul">Isi Box</p>
-<div class="spesifikasi" id="isibox"></div>
-<button class="tombol" onclick="copyIsiBoxToClipBoard()">Copy Isi Box</button>
-
-
-<!-- BATAS COPAS -->
-
+<footer>
+<div class="kaki">
+  <a href="javascript:history.go(-1)"><p class="menu">Back</p></a>
+  <a href="#"><p class="menu"></p></a>
+  <a href="#"><p class="menu"></p></a>
+  <a href="../index.html"><p class="menu">Home</p></a>
+</div>
+<div class="clr"></div>
+</footer>
 
 
 
 <script type="text/javascript">
 
 
-let namaProduk = "Fujifilm X100F";
-let hargaCash = 17999000;
-let cashBack = 0;
-let freeBawaan = "Instax Share SP-2";
+let namaProduk = "Panasonic Leica Lens DG Summilux 25mm F/1.4 ASPH";
+let hargaCash = 6990000;
+let cashBack = 400000;
+let freeBawaan = 0;
 let freeClaim = 0;
-let garansi = "Garansi Resmi 1 Tahun Fujifilm Indonesia";
+let garansi = "Garansi Resmi 1 Tahun Panasonic Indonesia";
 let batasClaim = 0;
-let periode = " ";
+let periode = "Periode 6 - 29 Februari 2020";
 let hargaCB = hargaCash - cashBack;
 let hargaHci = hargaCB;
 let bunga69 = 2.29; // BUNGA TENOR 9 BULAN 
 let bunga1224 = 2.69; // BUNGA TENOR 12, 15, 18 & 24 BULAN
-let bungaAdmin = 6; // BIAYA SUBSIDI ADMIN PROMO LOKAL 0%
+let bungaAdmin = 6; // BIAYA ADMIN PROMO LOKAL 0% 
 
-
-////////////////////////////COPAS DARI BAWAH INI //////////////////////////////////////
-
-const spesifikasi = {
-   Produk : namaProduk,
-   Kategori : "Kamera Compact",
-   Resolusi:"24.3 megapixel", 
-   Sensor : "APS-C CMOS", // Jenis Sensor
-   Touchscreen : "No", // Diisi Yes / No
-   Video : "Full HD 60fps", // Spesifikasi Video Tertinggi
-   Layar : "Fixed", // Tergantung Kamera (bisa Layar Fixed, atau Layar Flip 180 Derajat)
-   Timelapse : "Yes",
-   Viewfinder : "Yes",
-   test :0, // JIka tidak perlu ditampilkan cukup diisi 0 sama seperti contoh disamping <<<
-   Microphone_Port :"No",  // Diisi Yes / No
-   Headphone_Port : "No", // Diisi Yes / No
-   Baterai : "NP-W126S",
-   Charger : "BC-W126S",
-   Daya_Baterai : "450 shots" // Berapa x jepret
-   
-}
-
-
-
-for (const property in spesifikasi) {
-  if(`${spesifikasi[property]}` == 0) {continue;}
-  //console.log(`${property}: ${spesifikasi[property]}`)
-  document.getElementById('spesifikasi').innerHTML +=  `${property}` +" : " +`${spesifikasi[property]}` +"<br>";
-}
-
-
-const isibox = [
-  
-// Isi dibawah ini // menggunakan tanda petik contoh "Body Kamera", dan dikasih koma
-// kecuali yang terakhir/paling bawah tidak perlu dikasi tanda koma.
-// Contoh : 
-// "Body Kamera",
-// "Lensa Kit",
-//  "Kabel Data",
-// "Kartu Garansi",
-// "Buku Panduan"
-
-
- // Isi diatas ini
-]
-
-
-for(let i = 0; i < isibox.length;i++){
-  console.log(isibox[i]);
-  document.getElementById('isibox').innerHTML += isibox[i] +"<br>";
-}
-
-///////////////////// SAMPAI DISINI //////////////////////////////////
 
 
 
@@ -1096,32 +1037,7 @@ function copyCashToClipBoard(){
   document.execCommand('copy');
 }
 
-// COPAS MULAI DARI SINI /////////////////
 
-function copySpekToClipBoard(){
-  var text = document.getElementById("spesifikasi");
-  var selection = window.getSelection();
-  var range = document.createRange();
-  range.selectNodeContents(text);
-  selection.removeAllRanges();
-  selection.addRange(range);
-  //add to clipboard.
-  document.execCommand('copy');
-}
-
-function copyIsiBoxToClipBoard(){
-  var text = document.getElementById("isibox");
-  var selection = window.getSelection();
-  var range = document.createRange();
-  range.selectNodeContents(text);
-  selection.removeAllRanges();
-  selection.addRange(range);
-  //add to clipboard.
-  document.execCommand('copy');
-}
-
-
-// SAMPAI DISINI /////////////////////
 
 </script>
 
